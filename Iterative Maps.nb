@@ -1,0 +1,302 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9090,        294]
+NotebookOptionsPosition[      7969,        256]
+NotebookOutlinePosition[      8330,        272]
+CellTagsIndexPosition[      8287,        269]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Fractals from Iterative Maps", "Title",
+ CellChangeTimes->{{3.6947826288253803`*^9, 3.694782633939022*^9}}],
+
+Cell["MATH 381 Complex Analysis", "Subtitle",
+ CellChangeTimes->{{3.695566007663095*^9, 3.695566013726037*^9}}],
+
+Cell["Dr. Robert Jacobson, Roger Williams University", "Subsubtitle",
+ CellChangeTimes->{{3.695566029854228*^9, 3.6955660392618723`*^9}}],
+
+Cell["The iterative map for the Mandelbrot set is the following.", "Text",
+ CellChangeTimes->{{3.694783051072693*^9, 3.69478306434394*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "[", 
+   RowBox[{"z_", ",", " ", "c_"}], "]"}], ":=", 
+  RowBox[{
+   SuperscriptBox["z", "2"], "+", "c"}]}]], "Input",
+ CellChangeTimes->{{3.694782850416561*^9, 3.6947828723933573`*^9}}],
+
+Cell[TextData[{
+ "We start with ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"z", "=", "0"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"c", "="}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " a point on the plane and iterate the map. Let\[CloseCurlyQuote]s try it \
+with ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"c", "=", 
+    RowBox[{
+     RowBox[{"-", "0.75"}], "+", 
+     RowBox[{"0.5", " ", "\[ImaginaryI]"}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ":"
+}], "Text",
+ CellChangeTimes->{{3.694783067871888*^9, 3.694783109919722*^9}, {
+  3.694789629562018*^9, 3.6947896366818867`*^9}, {3.694789811033991*^9, 
+  3.694789834844631*^9}}],
+
+Cell[BoxData[
+ RowBox[{"c", "=", 
+  RowBox[{
+   RowBox[{"-", "0.75"}], "+", 
+   RowBox[{"0.5", " ", "\[ImaginaryI]"}]}]}]], "Input",
+ CellChangeTimes->{{3.6947898835736933`*^9, 3.694789883721017*^9}, {
+  3.694790006068881*^9, 3.694790008528343*^9}}],
+
+Cell[BoxData[
+ RowBox[{"f", "[", 
+  RowBox[{"0", ",", " ", "c"}], "]"}]], "Input",
+ CellChangeTimes->{{3.694789845548732*^9, 3.694789859305531*^9}, {
+  3.694790016360965*^9, 3.6947900166643753`*^9}}],
+
+Cell[TextData[{
+ "The symbol ",
+ Cell[BoxData[
+  FormBox["%", TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " in Mathematica stands for the last output. We can use that symbol to use \
+the last output as an input to the next computation. Evaluating the following \
+expression repeatedly will iterate the quadratic map."
+}], "Text",
+ CellChangeTimes->{{3.6947928689550753`*^9, 3.6947929615145607`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"f", "[", 
+  RowBox[{"%", ",", " ", "c"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6947898637106133`*^9, 3.69478986575383*^9}, {
+  3.694791335194806*^9, 3.694791335594762*^9}}],
+
+Cell[TextData[{
+ "We make ",
+ Cell[BoxData[
+  FormBox["c", TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " into a variable again by \[OpenCurlyDoubleQuote]unsetting\
+\[CloseCurlyDoubleQuote] it. In Mathematica, set ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"c", "=."}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " to \[OpenCurlyDoubleQuote]unset\[CloseCurlyDoubleQuote] ",
+ Cell[BoxData[
+  FormBox["c", TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.694793106136448*^9, 3.6947931838975363`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"c", "=."}]], "Input",
+ CellChangeTimes->{{3.6947931340469103`*^9, 3.694793136122739*^9}}],
+
+Cell[TextData[{
+ "We can iterate the function symbolically as well. Here is what you get \
+after four iterations (note that ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"f", "[", 
+     RowBox[{"0", ",", "c"}], "]"}], "=", 
+    RowBox[{
+     RowBox[{"c", "\[Rule]", " ", 
+      RowBox[{"f", "[", 
+       RowBox[{"c", ",", " ", "c"}], "]"}]}], "=", 
+     RowBox[{"f", "[", 
+      RowBox[{"f", "[", 
+       RowBox[{"0", ",", " ", "c"}], "]"}], "]"}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " ). "
+}], "Text",
+ CellChangeTimes->{{3.6947929742413683`*^9, 3.694793067025634*^9}, {
+  3.694793254537079*^9, 3.694793360960498*^9}}],
+
+Cell[BoxData[
+ RowBox[{"f", "[", 
+  RowBox[{
+   RowBox[{"f", "[", 
+    RowBox[{
+     RowBox[{"f", "[", 
+      RowBox[{"c", ",", " ", "c"}], "]"}], ",", " ", "c"}], "]"}], ",", " ", 
+   "c"}], "]"}]], "Input",
+ CellChangeTimes->{{3.694783394749405*^9, 3.6947834646377172`*^9}, 
+   3.694793011570642*^9, {3.6947931988181458`*^9, 3.694793201825727*^9}, 
+   3.694793273057582*^9}],
+
+Cell[TextData[{
+ "Mathematica has a built-in function called ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"Nest", "[", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " to do this iteration for us. "
+}], "Text",
+ CellChangeTimes->{{3.694793440064218*^9, 3.694793483903914*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Nest", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"f", "[", 
+     RowBox[{"#", ",", " ", "c"}], "]"}], "&"}], ",", "c", ",", " ", "3"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.694783543526041*^9, 3.6947836041251907`*^9}, {
+  3.6947878274028997`*^9, 3.694787837913858*^9}, {3.694793429944819*^9, 
+  3.694793432960567*^9}}],
+
+Cell[TextData[{
+ "We can also use the built-in function ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"NestList", "[", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " to get a list of the first 9+1 = 10 iterations of ",
+ Cell[BoxData[
+  FormBox["f", TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.694793489568049*^9, 3.694793539007782*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"lst", "=", 
+   RowBox[{"NestList", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"f", "[", 
+       RowBox[{"#1", ",", "c"}], "]"}], "&"}], ",", "c", ",", " ", "9"}], 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.694783613549404*^9, 3.694783655012397*^9}, {
+  3.694787848609729*^9, 3.694787850882143*^9}, {3.694793514776272*^9, 
+  3.694793545632024*^9}}],
+
+Cell[TextData[{
+ "We can display this list by putting it into another list to form a ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"1", "\[Times]", "10"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " matrix, transposing the matrix into a ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"10", "\[Times]", "1"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " matrix, then displaying it with the ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"TableForm", "[", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " function."
+}], "Text",
+ CellChangeTimes->{{3.69479357072407*^9, 3.694793586032056*^9}, {
+  3.694793664015676*^9, 3.694793785846682*^9}}],
+
+Cell[BoxData[
+ RowBox[{"TableForm", "[", 
+  RowBox[{"Transpose", "[", 
+   RowBox[{"{", "lst", "}"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.694783707027843*^9, 3.694783744547946*^9}, {
+  3.694783780219674*^9, 3.6947837836863413`*^9}, {3.694793597831918*^9, 
+  3.694793605167671*^9}, {3.694793638151778*^9, 3.69479364858319*^9}}],
+
+Cell[BoxData[
+ RowBox[{"TableForm", "[", 
+  RowBox[{"Transpose", "[", 
+   RowBox[{"{", 
+    RowBox[{"Expand", "/@", "lst"}], "}"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6947938126833887`*^9, 3.6947938415184307`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"2", "^", "9"}]], "Input",
+ CellChangeTimes->{{3.694793884938381*^9, 3.694793885670329*^9}}],
+
+Cell[TextData[{
+ "Note that the last polynomial is of degree ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["2", "9"], "=", "512"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " and has 512 nonzero terms."
+}], "Text",
+ CellChangeTimes->{{3.694793873830913*^9, 3.6947939189660397`*^9}, {
+  3.694793956397718*^9, 3.6947939775819798`*^9}}]
+}, Open  ]]
+},
+WindowSize->{1198, 1194},
+WindowMargins->{{Automatic, 642}, {Automatic, 0}},
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
+21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 113, 1, 137, "Title"],
+Cell[696, 25, 111, 1, 76, "Subtitle"],
+Cell[810, 28, 137, 1, 44, "Subsubtitle"],
+Cell[950, 31, 139, 1, 46, "Text"],
+Cell[1092, 34, 225, 6, 48, "Input"],
+Cell[1320, 42, 717, 24, 47, "Text"],
+Cell[2040, 68, 249, 6, 48, "Input"],
+Cell[2292, 76, 199, 4, 48, "Input"],
+Cell[2494, 82, 409, 9, 77, "Text"],
+Cell[2906, 93, 198, 4, 48, "Input"],
+Cell[3107, 99, 558, 17, 47, "Text"],
+Cell[3668, 118, 113, 2, 48, "Input"],
+Cell[3784, 122, 649, 19, 77, "Text"],
+Cell[4436, 143, 376, 10, 48, "Input"],
+Cell[4815, 155, 285, 8, 47, "Text"],
+Cell[5103, 165, 346, 9, 48, "Input"],
+Cell[5452, 176, 394, 12, 47, "Text"],
+Cell[5849, 190, 396, 11, 48, "Input"],
+Cell[6248, 203, 658, 19, 78, "Text"],
+Cell[6909, 224, 335, 6, 48, "Input"],
+Cell[7247, 232, 225, 5, 48, "Input"],
+Cell[7475, 239, 115, 2, 48, "Input"],
+Cell[7593, 243, 360, 10, 47, "Text"]
+}, Open  ]]
+}
+]
+*)
+

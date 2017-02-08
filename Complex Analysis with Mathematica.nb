@@ -1,0 +1,1411 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     45147,       1403]
+NotebookOptionsPosition[     41122,       1268]
+NotebookOutlinePosition[     41484,       1284]
+CellTagsIndexPosition[     41441,       1281]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Complex Analysis and Mathematica", "Title",
+ CellChangeTimes->{{3.694794049512487*^9, 3.6947940635174093`*^9}}],
+
+Cell["\<\
+Dr. Robert Jacobson
+Roger Williams University\
+\>", "Subtitle",
+ CellChangeTimes->{{3.694794082485259*^9, 3.69479409526892*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Complex Numbers", "Chapter",
+ CellChangeTimes->{{3.694794131621139*^9, 3.694794133996813*^9}}],
+
+Cell[TextData[{
+ "Mathematica thinks the symbol ",
+ Cell[BoxData[
+  FormBox["i", TraditionalForm]]],
+ " is just another undefined symbol along with ",
+ Cell[BoxData[
+  FormBox["x", TraditionalForm]]],
+ " or ",
+ Cell[BoxData[
+  FormBox["z", TraditionalForm]]],
+ ". Use an uppercase ",
+ Cell[BoxData[
+  FormBox["I", TraditionalForm]]],
+ " or a blackboard bold lowercase ",
+ Cell[BoxData[
+  FormBox["\[ImaginaryI]", TraditionalForm]]],
+ " (entered as <esc>ii<esc>)."
+}], "Text",
+ CellChangeTimes->{{3.694794140020878*^9, 3.694794292172435*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   SqrtBox[
+    RowBox[{"-", "1"}]], ",", 
+   SuperscriptBox["i", "2"], ",", " ", 
+   SuperscriptBox["I", "2"], ",", " ", 
+   SuperscriptBox["\[ImaginaryI]", "2"]}], "}"}]], "Input",
+ CellChangeTimes->{{3.6947942974009323`*^9, 3.694794332508218*^9}, {
+  3.694795980677121*^9, 3.6947959893414793`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\[ImaginaryI]", ",", 
+   SuperscriptBox["i", "2"], ",", 
+   RowBox[{"-", "1"}], ",", 
+   RowBox[{"-", "1"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.694794305000434*^9, 3.694794332823332*^9}, 
+   3.6947959909345427`*^9}]
+}, Open  ]],
+
+Cell["\<\
+We can get the real part, imaginary part, both real and imaginary parts, \
+complex conjugate, absolute value (modulus), principle argument, both \
+absolute value and principle argument, and conversion to and from \
+exponentials and trig function representations.\
+\>", "Text",
+ CellChangeTimes->{{3.694795562609405*^9, 3.694795601496237*^9}, {
+  3.694796884072957*^9, 3.6947969413121843`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TableForm", "[", 
+  RowBox[{"Transpose", "[", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Text", "[", 
+        RowBox[{"Style", "[", 
+         RowBox[{"\"\<Input\>\"", ",", " ", 
+          RowBox[{"{", 
+           RowBox[{"Bold", ",", " ", "Underlined"}], "}"}]}], "]"}], "]"}], 
+       ",", " ", 
+       RowBox[{"HoldForm", "[", 
+        RowBox[{"Re", "[", 
+         RowBox[{"3", "+", 
+          RowBox[{"4", " ", "\[ImaginaryI]"}]}], "]"}], "]"}], ",", " ", 
+       RowBox[{"HoldForm", "[", 
+        RowBox[{"Im", "[", 
+         RowBox[{"3", "+", 
+          RowBox[{"4", " ", "\[ImaginaryI]"}]}], "]"}], "]"}], ",", " ", 
+       RowBox[{"HoldForm", "[", 
+        RowBox[{"ReIm", "[", 
+         RowBox[{"3", "+", 
+          RowBox[{"4", " ", "\[ImaginaryI]"}]}], "]"}], "]"}], ",", " ", 
+       RowBox[{"HoldForm", "[", 
+        RowBox[{"Abs", "[", 
+         RowBox[{"3", "+", 
+          RowBox[{"4", " ", "\[ImaginaryI]"}]}], "]"}], "]"}], ",", " ", 
+       RowBox[{"HoldForm", "[", 
+        RowBox[{"Arg", "[", 
+         RowBox[{"1", "+", 
+          RowBox[{"1", " ", "\[ImaginaryI]"}]}], "]"}], "]"}], ",", " ", 
+       RowBox[{"HoldForm", "[", 
+        RowBox[{"AbsArg", "[", 
+         RowBox[{"1", "+", 
+          RowBox[{"1", "\[ImaginaryI]"}]}], "]"}], "]"}], ",", " ", 
+       RowBox[{"HoldForm", "[", 
+        RowBox[{"Conjugate", "[", 
+         RowBox[{"3", "+", 
+          RowBox[{"4", " ", "\[ImaginaryI]"}]}], "]"}], "]"}], ",", " ", 
+       RowBox[{"HoldForm", "[", 
+        RowBox[{"ExpToTrig", "[", 
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "x"}]], "]"}], "]"}], ",", " ", 
+       RowBox[{"HoldForm", "[", 
+        RowBox[{"TrigToExp", "[", 
+         RowBox[{
+          RowBox[{"Cos", "[", "x", "]"}], "+", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"Sin", "[", "x", "]"}]}]}], "]"}], "]"}]}], "}"}], ",", 
+     " ", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Text", "[", 
+        RowBox[{"Style", "[", 
+         RowBox[{"\"\<Output\>\"", ",", " ", 
+          RowBox[{"{", 
+           RowBox[{"Bold", ",", " ", "Underlined"}], "}"}]}], "]"}], "]"}], 
+       ",", " ", 
+       RowBox[{"Re", "[", 
+        RowBox[{"3", "+", 
+         RowBox[{"4", " ", "\[ImaginaryI]"}]}], "]"}], ",", " ", 
+       RowBox[{"Im", "[", 
+        RowBox[{"3", "+", 
+         RowBox[{"4", " ", "\[ImaginaryI]"}]}], "]"}], ",", " ", 
+       RowBox[{"HoldForm", "[", 
+        RowBox[{"Evaluate", "[", 
+         RowBox[{"ReIm", "[", 
+          RowBox[{"3", "+", 
+           RowBox[{"4", " ", "\[ImaginaryI]"}]}], "]"}], "]"}], "]"}], ",", 
+       " ", 
+       RowBox[{"Abs", "[", 
+        RowBox[{"3", "+", 
+         RowBox[{"4", " ", "\[ImaginaryI]"}]}], "]"}], ",", " ", 
+       RowBox[{"Arg", "[", 
+        RowBox[{"1", "+", 
+         RowBox[{"1", " ", "\[ImaginaryI]"}]}], "]"}], ",", " ", 
+       RowBox[{"HoldForm", "[", 
+        RowBox[{"Evaluate", "[", 
+         RowBox[{"AbsArg", "[", 
+          RowBox[{"1", "+", 
+           RowBox[{"1", "\[ImaginaryI]"}]}], "]"}], "]"}], "]"}], ",", " ", 
+       RowBox[{"Conjugate", "[", 
+        RowBox[{"3", "+", 
+         RowBox[{"4", " ", "\[ImaginaryI]"}]}], "]"}], ",", " ", 
+       RowBox[{"ExpToTrig", "[", 
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"\[ImaginaryI]", " ", "x"}]], "]"}], ",", " ", 
+       RowBox[{"TrigToExp", "[", 
+        RowBox[{
+         RowBox[{"Cos", "[", "x", "]"}], "+", 
+         RowBox[{"\[ImaginaryI]", " ", 
+          RowBox[{"Sin", "[", "x", "]"}]}]}], "]"}]}], "}"}]}], "}"}], "]"}], 
+  "]"}]], "Input",
+ CellOpen->False,
+ CellChangeTimes->{{3.69479695892276*^9, 3.694797310352219*^9}, 
+   3.694797406248664*^9, {3.6947974701671553`*^9, 3.6947974828944683`*^9}, {
+   3.694797557639114*^9, 3.694797581615623*^9}, {3.694797645030139*^9, 
+   3.694797766134997*^9}, {3.694797802662059*^9, 3.69479789098486*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox["\<\"Input\"\>",
+         StripOnInput->False,
+         FontWeight->Bold,
+         FontVariations->{"Underline"->True}], TextForm]], "InlineText"],
+      Text[
+       Style["Input", {Bold, Underlined}]]], 
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox["\<\"Output\"\>",
+         StripOnInput->False,
+         FontWeight->Bold,
+         FontVariations->{"Underline"->True}], TextForm]], "InlineText"],
+      Text[
+       Style["Output", {Bold, Underlined}]]]},
+    {
+     TagBox[
+      RowBox[{"Re", "[", 
+       RowBox[{"3", "+", 
+        RowBox[{"4", " ", "\[ImaginaryI]"}]}], "]"}],
+      HoldForm], "3"},
+    {
+     TagBox[
+      RowBox[{"Im", "[", 
+       RowBox[{"3", "+", 
+        RowBox[{"4", " ", "\[ImaginaryI]"}]}], "]"}],
+      HoldForm], "4"},
+    {
+     TagBox[
+      RowBox[{"ReIm", "[", 
+       RowBox[{"3", "+", 
+        RowBox[{"4", " ", "\[ImaginaryI]"}]}], "]"}],
+      HoldForm], 
+     TagBox[
+      RowBox[{"{", 
+       RowBox[{"3", ",", "4"}], "}"}],
+      HoldForm]},
+    {
+     TagBox[
+      RowBox[{"Abs", "[", 
+       RowBox[{"3", "+", 
+        RowBox[{"4", " ", "\[ImaginaryI]"}]}], "]"}],
+      HoldForm], "5"},
+    {
+     TagBox[
+      RowBox[{"Arg", "[", 
+       RowBox[{"1", "+", 
+        RowBox[{"1", " ", "\[ImaginaryI]"}]}], "]"}],
+      HoldForm], 
+     FractionBox["\[Pi]", "4"]},
+    {
+     TagBox[
+      RowBox[{"AbsArg", "[", 
+       RowBox[{"1", "+", 
+        RowBox[{"1", " ", "\[ImaginaryI]"}]}], "]"}],
+      HoldForm], 
+     TagBox[
+      RowBox[{"{", 
+       RowBox[{
+        SqrtBox["2"], ",", 
+        FractionBox["\[Pi]", "4"]}], "}"}],
+      HoldForm]},
+    {
+     TagBox[
+      RowBox[{"Conjugate", "[", 
+       RowBox[{"3", "+", 
+        RowBox[{"4", " ", "\[ImaginaryI]"}]}], "]"}],
+      HoldForm], 
+     RowBox[{"3", "-", 
+      RowBox[{"4", " ", "\[ImaginaryI]"}]}]},
+    {
+     TagBox[
+      RowBox[{"ExpToTrig", "[", 
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{"\[ImaginaryI]", " ", "x"}]], "]"}],
+      HoldForm], 
+     RowBox[{
+      RowBox[{"Cos", "[", "x", "]"}], "+", 
+      RowBox[{"\[ImaginaryI]", " ", 
+       RowBox[{"Sin", "[", "x", "]"}]}]}]},
+    {
+     TagBox[
+      RowBox[{"TrigToExp", "[", 
+       RowBox[{
+        RowBox[{"Cos", "[", "x", "]"}], "+", 
+        RowBox[{"\[ImaginaryI]", " ", 
+         RowBox[{"Sin", "[", "x", "]"}]}]}], "]"}],
+      HoldForm], 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{"\[ImaginaryI]", " ", "x"}]]}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{
+  3.6947971013517523`*^9, {3.694797140811516*^9, 3.694797157678186*^9}, {
+   3.694797200485985*^9, 3.694797213994245*^9}, 3.694797255116014*^9, {
+   3.694797285691728*^9, 3.694797311946946*^9}, 3.694797406978509*^9, 
+   3.6947974832562103`*^9, {3.694797573419427*^9, 3.694797582314273*^9}, 
+   3.694797646901264*^9, {3.6947976864281473`*^9, 3.694797719317541*^9}, {
+   3.694797753572394*^9, 3.694797767027426*^9}, 3.69479780867594*^9, 
+   3.694797859940301*^9, 3.694797891834022*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Annoyingly, Mathematica doesn\[CloseCurlyQuote]t automatically collect the ",
+ Cell[BoxData[
+  FormBox["\[ImaginaryI]", TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " terms."
+}], "Text",
+ CellChangeTimes->{{3.6947943919476013`*^9, 3.6947944504034443`*^9}, {
+  3.694794501940346*^9, 3.6947945443716803`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Expand", "[", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"a", " ", "+", " ", 
+     RowBox[{"b", " ", "\[ImaginaryI]"}]}], ")"}], 
+   RowBox[{"(", 
+    RowBox[{"c", "+", 
+     RowBox[{"d", " ", "\[ImaginaryI]"}]}], ")"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.694794352419476*^9, 3.694794373259961*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"a", " ", "c"}], "+", 
+  RowBox[{"\[ImaginaryI]", " ", "b", " ", "c"}], "+", 
+  RowBox[{"\[ImaginaryI]", " ", "a", " ", "d"}], "-", 
+  RowBox[{"b", " ", "d"}]}]], "Output",
+ CellChangeTimes->{{3.6947943678559017`*^9, 3.694794374051667*^9}}]
+}, Open  ]],
+
+Cell["\<\
+We can expand symbolic expressions into real and imaginary parts with \
+ComplexExpand[]. This function automatically assumes all of our variables are \
+real numbers.\
+\>", "Text",
+ CellChangeTimes->{{3.694796050401396*^9, 3.694796107211385*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ComplexExpand", "[", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"a", " ", "+", " ", 
+     RowBox[{"b", " ", "\[ImaginaryI]"}]}], ")"}], 
+   RowBox[{"(", 
+    RowBox[{"c", "+", 
+     RowBox[{"d", " ", "\[ImaginaryI]"}]}], ")"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.694794847585204*^9, 3.694794854233561*^9}, {
+  3.694794918257267*^9, 3.694794948126069*^9}, {3.694795007570272*^9, 
+  3.694795082962244*^9}, {3.6947954148075933`*^9, 3.6947954209270144`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"a", " ", "c"}], "-", 
+  RowBox[{"b", " ", "d"}], "+", 
+  RowBox[{"\[ImaginaryI]", " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"b", " ", "c"}], "+", 
+     RowBox[{"a", " ", "d"}]}], ")"}]}]}]], "Output",
+ CellChangeTimes->{{3.694795030914626*^9, 3.694795083704157*^9}, {
+  3.6947954165762*^9, 3.694795426823678*^9}}]
+}, Open  ]],
+
+Cell["\<\
+Usually Mathematica doesn\[CloseCurlyQuote]t assume any undefined symbols are \
+real numbers unless we tell it to. There are several other functions to make \
+an assumption for a single line.\
+\>", "Text",
+ CellChangeTimes->{{3.694794547239875*^9, 3.694794568362876*^9}, {
+  3.694795117920905*^9, 3.694795145863976*^9}, {3.694795440686627*^9, 
+  3.6947954810344753`*^9}, {3.694796113347423*^9, 3.694796132916445*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Simplify", "[", 
+  SqrtBox[
+   SuperscriptBox["x", "2"]], "]"}]], "Input",
+ CellChangeTimes->{{3.69479640133919*^9, 3.694796406890244*^9}}],
+
+Cell[BoxData[
+ SqrtBox[
+  SuperscriptBox["x", "2"]]], "Output",
+ CellChangeTimes->{
+  3.694796254747672*^9, {3.69479640289931*^9, 3.694796407210351*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Refine", "[", 
+  RowBox[{
+   SqrtBox[
+    SuperscriptBox["x", "2"]], ",", " ", 
+   RowBox[{"x", "\[Element]", "Reals"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6947962064962587`*^9, 3.694796235003045*^9}, {
+  3.694796267779995*^9, 3.694796278754813*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Abs", "[", "x", "]"}]], "Output",
+ CellChangeTimes->{{3.6947962128921623`*^9, 3.6947962355108347`*^9}, {
+  3.694796270254982*^9, 3.694796283950955*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Assuming", "[", 
+  RowBox[{
+   RowBox[{"x", "\[Element]", "Reals"}], ",", " ", 
+   RowBox[{"Simplify", "[", 
+    SqrtBox[
+     SuperscriptBox["x", "2"]], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.694796308035782*^9, 3.6947963440753508`*^9}, {
+  3.6947963967874517`*^9, 3.69479639777864*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Abs", "[", "x", "]"}]], "Output",
+ CellChangeTimes->{{3.694796326997095*^9, 3.6947963443850193`*^9}, 
+   3.6947963981855392`*^9}]
+}, Open  ]],
+
+Cell["\<\
+Simplify does fast sophisticated simplification, while FullSimplify does even \
+more simplification but can be slower. Both take assumptions as a second \
+parameter, as do many other Mathematica functions.\
+\>", "Text",
+ CellChangeTimes->{{3.694796687373437*^9, 3.694796760032648*^9}, {
+  3.694798028043352*^9, 3.6947980351392193`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Simplify", "[", 
+  RowBox[{
+   SqrtBox[
+    SuperscriptBox["x", "2"]], ",", " ", 
+   RowBox[{"x", "\[Element]", "Reals"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.694796548329596*^9, 3.6947965690583963`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Abs", "[", "x", "]"}]], "Output",
+ CellChangeTimes->{3.694796569692132*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Complex Functions", "Chapter",
+ CellChangeTimes->{{3.69539619078238*^9, 3.6953962218857613`*^9}}],
+
+Cell[TextData[{
+ "Most of Mathematica\[CloseCurlyQuote]s built-in functions work with complex \
+numbers automatically. Note that Euler\[CloseCurlyQuote]s constant \
+\[ExponentialE] is entered either as ",
+ Cell[BoxData[
+  FormBox["E", TraditionalForm]]],
+ " (capitalized) or as <esc>ee<esc>. Additionally, the exponential function \
+",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["\[ExponentialE]", "z"], "=", 
+    RowBox[{"Exp", "[", "z", "]"}]}], TraditionalForm]]],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.6953962400217733`*^9, 3.695396286125572*^9}, {
+   3.69539807252125*^9, 3.695398087993692*^9}, 3.695398318256274*^9, {
+   3.695398493239635*^9, 3.695398498943604*^9}, {3.695398814271042*^9, 
+   3.695398952295002*^9}, {3.695566160860427*^9, 3.695566161012169*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{"\[ImaginaryI]", " ", 
+     SqrtBox["3"]}]], ",", " ", 
+   RowBox[{"Exp", "[", 
+    RowBox[{
+     SqrtBox["3"], "\[ImaginaryI]"}], "]"}], ",", " ", 
+   RowBox[{"ComplexExpand", "[", 
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      SqrtBox["3"], "\[ImaginaryI]"}], "]"}], "]"}]}], "}"}]], "Input",
+ CellChangeTimes->{{3.695398724482267*^9, 3.695398767486802*^9}, {
+  3.695398970120158*^9, 3.695399008606904*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{"\[ImaginaryI]", " ", 
+     SqrtBox["3"]}]], ",", 
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{"\[ImaginaryI]", " ", 
+     SqrtBox["3"]}]], ",", 
+   RowBox[{
+    RowBox[{"Cos", "[", 
+     SqrtBox["3"], "]"}], "+", 
+    RowBox[{"\[ImaginaryI]", " ", 
+     RowBox[{"Sin", "[", 
+      SqrtBox["3"], "]"}]}]}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.695398737506435*^9, 3.695398768224334*^9}, {
+  3.695398971000587*^9, 3.695399009639667*^9}}]
+}, Open  ]],
+
+Cell["\<\
+Trigonometric functions are often written in terms of the exponential \
+function. Mathematica can convert back and forth between representations.\
+\>", "Text",
+ CellChangeTimes->{{3.695399046554944*^9, 3.695399088318314*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TrigToExp", "[", 
+  RowBox[{"Sin", "[", "z", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.695399026251151*^9, 3.695399036630615*^9}, {
+  3.695399093567548*^9, 3.6953990961017017`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   FractionBox["1", "2"], " ", "\[ImaginaryI]", " ", 
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{
+     RowBox[{"-", "\[ImaginaryI]"}], " ", "z"}]]}], "-", 
+  RowBox[{
+   FractionBox["1", "2"], " ", "\[ImaginaryI]", " ", 
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{"\[ImaginaryI]", " ", "z"}]]}]}]], "Output",
+ CellChangeTimes->{3.695399037010957*^9, 3.695399097279748*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"  ", 
+  RowBox[{"ExpToTrig", "[", 
+   RowBox[{
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{"\[ImaginaryI]", " ", "z"}]], "+", " ", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", "\[ImaginaryI]"}], " ", "z"}]]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.695399117598187*^9, 3.6953991594555798`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"2", " ", 
+  RowBox[{"Cos", "[", "z", "]"}]}]], "Output",
+ CellChangeTimes->{{3.695399149135404*^9, 3.695399160081205*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Plotting...", "Chapter",
+ CellChangeTimes->{{3.695399205557371*^9, 3.695399206413968*^9}, {
+  3.6953992511576366`*^9, 3.695399273653471*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["...a region in the complex plane defined by inequalities.", "Section",
+ CellChangeTimes->{{3.695399281045539*^9, 3.6953992947735243`*^9}, {
+  3.695400213225875*^9, 3.695400219345887*^9}}],
+
+Cell[TextData[{
+ "Suppose you with to plot the set ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"{", 
+    RowBox[{"z", " ", "\[Element]", " ", 
+     RowBox[{"\[DoubleStruckCapitalC]", " ", ":", " ", 
+      RowBox[{"|", 
+       RowBox[{"z", "-", "1"}], "|", " ", 
+       RowBox[{"+", " ", 
+        RowBox[{"|", 
+         RowBox[{"z", "-", "\[ImaginaryI]"}], "|", 
+         RowBox[{"<", "2"}]}]}]}]}]}], "}"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ". One method is to convert to real coordinates."
+}], "Text",
+ CellChangeTimes->{{3.695399326191533*^9, 3.695399397909988*^9}, {
+  3.695399429102684*^9, 3.695399454965041*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"z", "=", 
+  RowBox[{"x", "+", 
+   RowBox[{"\[ImaginaryI]", " ", "y"}]}]}]], "Input",
+ CellChangeTimes->{{3.695399471896708*^9, 3.695399481733102*^9}}],
+
+Cell[BoxData[
+ RowBox[{"x", "+", 
+  RowBox[{"\[ImaginaryI]", " ", "y"}]}]], "Output",
+ CellChangeTimes->{3.695399485972501*^9, 3.69539965039559*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ComplexExpand", "[", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Abs", "[", 
+     RowBox[{"z", "-", "1"}], "]"}], "+", 
+    RowBox[{"Abs", "[", 
+     RowBox[{"z", "-", "\[ImaginaryI]"}], "]"}]}], "<", "2"}], " ", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.6953994886755047`*^9, 3.6953995413729897`*^9}, {
+  3.695399640789548*^9, 3.6953996622834167`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   SqrtBox[
+    RowBox[{
+     SuperscriptBox["x", "2"], "+", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "1"}], "+", "y"}], ")"}], "2"]}]], "+", 
+   SqrtBox[
+    RowBox[{
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "1"}], "+", "x"}], ")"}], "2"], "+", 
+     SuperscriptBox["y", "2"]}]]}], "<", "2"}]], "Output",
+ CellChangeTimes->{
+  3.6953995001637907`*^9, 3.6953995432973757`*^9, {3.695399641743781*^9, 
+   3.695399657097414*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"RegionPlot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     SqrtBox[
+      RowBox[{
+       SuperscriptBox["x", "2"], "+", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"-", "1"}], "+", "y"}], ")"}], "2"]}]], "+", 
+     SqrtBox[
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"-", "1"}], "+", "x"}], ")"}], "2"], "+", 
+       SuperscriptBox["y", "2"]}]]}], "<", "2"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", " ", 
+     RowBox[{"-", "1"}], ",", " ", "2"}], "}"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"y", ",", " ", 
+     RowBox[{"-", "1"}], ",", " ", "2"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{3.695400029188595*^9}],
+
+Cell["\<\
+In this case the condition itself it real valued, so we can use it directly.\
+\>", "Text",
+ CellChangeTimes->{{3.695400034241066*^9, 3.695400079322526*^9}}],
+
+Cell[BoxData[
+ RowBox[{"RegionPlot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"Abs", "[", 
+      RowBox[{"z", "-", "1"}], "]"}], "+", 
+     RowBox[{"Abs", "[", 
+      RowBox[{"z", "-", "\[ImaginaryI]"}], "]"}]}], "<", "2"}], " ", ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", " ", 
+     RowBox[{"-", "1"}], ",", " ", "2"}], "}"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"y", ",", " ", 
+     RowBox[{"-", "1"}], ",", " ", "2"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.695399457262184*^9, 3.695399459861899*^9}, {
+   3.695399556897225*^9, 3.695399579380742*^9}, {3.6953996186777163`*^9, 
+   3.695399627060565*^9}, 3.695400000013299*^9, {3.695400199826654*^9, 
+   3.695400204075502*^9}}],
+
+Cell[BoxData[
+ RowBox[{"RegionPlot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Im", "[", 
+     RowBox[{"z", 
+      RowBox[{"(", 
+       RowBox[{"1", "+", 
+        RowBox[{"\[ImaginaryI]", " ", "2"}]}], ")"}]}], "]"}], " ", "<", " ", 
+    "2"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", " ", 
+     RowBox[{"-", "1"}], ",", " ", "2"}], "}"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"y", ",", " ", 
+     RowBox[{"-", "1"}], ",", " ", "2"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.695399457262184*^9, 3.695399459861899*^9}, {
+  3.695399556897225*^9, 3.695399579380742*^9}, {3.6953996186777163`*^9, 
+  3.695399627060565*^9}, {3.6954001256838303`*^9, 3.6954001410186977`*^9}, {
+  3.695400239002335*^9, 3.695400241194056*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["...a curve in the complex plane defined by an equation.", "Section",
+ CellChangeTimes->{{3.695399281045539*^9, 3.6953992947735243`*^9}, {
+  3.695400213225875*^9, 3.695400219345887*^9}, {3.695400262034643*^9, 
+  3.695400268899048*^9}}],
+
+Cell[TextData[{
+ "Suppose we wish to plot solutions to ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Re", "[", 
+     RowBox[{"Sin", "[", "z", "]"}], "]"}], "=", "2"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ". (A semicolon suppresses the output after evaluation.)"
+}], "Text",
+ CellChangeTimes->{{3.695400275472921*^9, 3.6954002824576406`*^9}, {
+  3.695400545097939*^9, 3.695400610307582*^9}, {3.695401068934113*^9, 
+  3.695401092096994*^9}, {3.695401422170712*^9, 3.6954014304238157`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"z", "=", 
+   RowBox[{"x", "+", 
+    RowBox[{"\[ImaginaryI]", " ", "y"}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.695400812513165*^9, 3.6954008137193604`*^9}, {
+  3.6954010526064034`*^9, 3.6954010581421413`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"ContourPlot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Re", "[", 
+     RowBox[{"Sin", "[", "z", "]"}], "]"}], "==", "2"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", " ", 
+     RowBox[{"-", "10"}], ",", " ", "10"}], "}"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"y", ",", " ", 
+     RowBox[{"-", "10"}], ",", " ", "10"}], "}"}], ",", " ", 
+   RowBox[{"ContourStyle", " ", "->", " ", "Purple"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.695401301685454*^9, 3.6954014019865513`*^9}}],
+
+Cell["The Show[] command combines two plots with the same axes.", "Text",
+ CellChangeTimes->{{3.695401459155182*^9, 3.69540147904417*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Show", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"ContourPlot", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Re", "[", 
+       RowBox[{"Exp", "[", 
+        RowBox[{"x", "+", 
+         RowBox[{"y", " ", "\[ImaginaryI]"}]}], "]"}], "]"}], "\[Equal]", 
+      RowBox[{"1", "/", "2"}]}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", " ", 
+       RowBox[{"-", "10"}], ",", " ", "10"}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"y", ",", " ", 
+       RowBox[{"-", "10"}], ",", " ", "10"}], "}"}], ",", " ", 
+     RowBox[{"ContourStyle", "\[Rule]", "Red"}]}], "]"}], ",", " ", 
+   "\[IndentingNewLine]", 
+   RowBox[{"ContourPlot", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Im", "[", 
+       RowBox[{"Exp", "[", 
+        RowBox[{"x", "+", 
+         RowBox[{"y", " ", "\[ImaginaryI]"}]}], "]"}], "]"}], "\[Equal]", 
+      RowBox[{"1", "/", "2"}]}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", " ", 
+       RowBox[{"-", "10"}], ",", " ", "10"}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"y", ",", " ", 
+       RowBox[{"-", "10"}], ",", " ", "10"}], "}"}], ",", " ", 
+     RowBox[{"ContourStyle", "\[Rule]", "Black"}]}], "]"}]}], 
+  "\[IndentingNewLine]", "]"}]], "Input",
+ CellChangeTimes->{{3.695400795729539*^9, 3.695400824263379*^9}, {
+  3.695400964286613*^9, 3.695401045789865*^9}, {3.69540109931141*^9, 
+  3.6954011394711647`*^9}, {3.6954012056552134`*^9, 3.695401222678214*^9}, {
+  3.69540127906199*^9, 3.695401285582848*^9}, {3.695401448493732*^9, 
+  3.69540145390098*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["... a curve on the plane defined parametrically.", "Section",
+ CellChangeTimes->{{3.695407757450037*^9, 3.695407779753313*^9}}],
+
+Cell[TextData[{
+ "Graph the function ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"Sin", "[", "z", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " as ",
+ Cell[BoxData[
+  FormBox["z", TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " traces out a circle of radius 2. To do so, we let ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"z", "=", 
+    RowBox[{"2", 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{"\[ImaginaryI]", " ", "\[Theta]"}]]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " and let \[Theta] vary from ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"-", "\[Pi]"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " to ",
+ Cell[BoxData[
+  FormBox["\[Pi]", TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ". Then we use ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"ParametricPlot", "[", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " to plot the real and imaginary parts of ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"Sin", "[", "z", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.695407801812072*^9, 3.695407840937097*^9}, {
+  3.695407894065619*^9, 3.6954080093923903`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"ParametricPlot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Re", "[", 
+      RowBox[{"Sin", "[", 
+       RowBox[{"2", " ", 
+        RowBox[{"Exp", "[", 
+         RowBox[{"\[Theta]", " ", "\[ImaginaryI]"}], "]"}]}], "]"}], "]"}], 
+     ",", " ", 
+     RowBox[{"Im", "[", 
+      RowBox[{"Sin", "[", 
+       RowBox[{"2", " ", 
+        RowBox[{"Exp", "[", 
+         RowBox[{"\[Theta]", " ", "\[ImaginaryI]"}], "]"}]}], "]"}], "]"}]}], 
+    "}"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"\[Theta]", ",", " ", 
+     RowBox[{"-", "\[Pi]"}], ",", " ", "\[Pi]"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.695407843811673*^9, 3.695407891480927*^9}, {
+  3.695408012120411*^9, 3.69540803026541*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["... a function from \[DoubleStruckCapitalC] to \
+\[DoubleStruckCapitalC].", "Section",
+ CellChangeTimes->{{3.695401501476685*^9, 3.695401537755988*^9}}],
+
+Cell[TextData[{
+ "The graph of a function ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"f", ":", "\[DoubleStruckCapitalC]"}], "\[Rule]", 
+    "\[DoubleStruckCapitalC]"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " is a four (real-)dimensional object. Nonetheless, there are several ways \
+to visualize such a function. One such method is to somehow reduce the graph \
+by one dimension. For example, one can make a surface plot by graphing ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"Re", "(", 
+    RowBox[{"f", "(", 
+     RowBox[{"x", "+", 
+      RowBox[{"\[ImaginaryI]", " ", "y"}]}], ")"}], ")"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " or ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"Im", "(", 
+    RowBox[{"f", "(", 
+     RowBox[{"x", "+", 
+      RowBox[{"\[ImaginaryI]", " ", "y"}]}], ")"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " or ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"|", 
+    RowBox[{"f", "(", 
+     RowBox[{"x", "+", 
+      RowBox[{"\[ImaginaryI]", " ", "y"}]}], ")"}], "|"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.695404145875355*^9, 3.6954042110945187`*^9}, {
+  3.695404253459064*^9, 3.695404349453144*^9}, {3.69540452802505*^9, 
+  3.695404569255404*^9}, {3.6954046003323936`*^9, 3.69540460202011*^9}, {
+  3.6954052637827587`*^9, 3.695405276846074*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"z", "=", 
+   RowBox[{"x", "+", 
+    RowBox[{"\[ImaginaryI]", " ", "y"}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.695404809554019*^9, 3.6954048140239973`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Plot3D", "[", " ", 
+  RowBox[{
+   RowBox[{"Re", "[", 
+    RowBox[{"Exp", "[", 
+     RowBox[{"x", "+", 
+      RowBox[{"\[ImaginaryI]", " ", "y"}]}], "]"}], "]"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", " ", 
+     RowBox[{"-", "10"}], ",", " ", "10"}], "}"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"y", ",", " ", 
+     RowBox[{"-", "10"}], ",", " ", "10"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.695404633043818*^9, 3.69540467312857*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Plot3D", "[", " ", 
+  RowBox[{
+   RowBox[{"Im", "[", 
+    RowBox[{"Sin", "[", 
+     RowBox[{"x", "+", 
+      RowBox[{"\[ImaginaryI]", " ", "y"}]}], "]"}], "]"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", " ", 
+     RowBox[{"-", "10"}], ",", " ", "10"}], "}"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"y", ",", " ", 
+     RowBox[{"-", "10"}], ",", " ", "10"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6954047002493896`*^9, 3.695404714390826*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Plot3D", "[", " ", 
+  RowBox[{
+   RowBox[{"Abs", "[", 
+    RowBox[{"z", "!"}], "]"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", " ", 
+     RowBox[{"-", "4"}], ",", " ", "4"}], "}"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"y", ",", " ", 
+     RowBox[{"-", "4"}], ",", " ", "4"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.695404727185478*^9, 3.695404754400182*^9}, {
+  3.695404799802209*^9, 3.695404831432104*^9}, {3.6954048910021687`*^9, 
+  3.695404951751587*^9}}],
+
+Cell[TextData[{
+ "Here is a really fancy way of plotting both the modulus and the argument of \
+",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"f", "(", "z", ")"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " in the same plot. The height of the surface is given by ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"|", 
+    RowBox[{"f", "(", "z", ")"}], "|"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " while the color is determined by ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"Arg", "(", "z", ")"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ". (It\[CloseCurlyQuote]s best to just copy and paste this into your \
+notebook whenever you wish to use it.) Notice that the plot range is given by \
+two complex numbers each at an opposite corner of the rectangle of the plot \
+range."
+}], "Text",
+ CellChangeTimes->{{3.6954051002554626`*^9, 3.695405247038171*^9}, {
+  3.69540537243047*^9, 3.695405410977882*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ComplexFnPlot", "[", 
+   RowBox[{"f_", ",", "range_", ",", "options___"}], "]"}], ":=", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"rangerealvar", ",", "rangeimagvar", ",", "g"}], "}"}], ",", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"g", "[", 
+       RowBox[{"r_", ",", "i_"}], "]"}], ":=", 
+      RowBox[{"(", 
+       RowBox[{"f", "/.", 
+        RowBox[{
+         RowBox[{"range", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "\[RuleDelayed]", 
+         RowBox[{"r", "+", 
+          RowBox[{"I", " ", "i"}]}]}]}], ")"}]}], ";", "\[IndentingNewLine]", 
+     
+     RowBox[{"Plot3D", "[", 
+      RowBox[{
+       RowBox[{"Abs", "[", 
+        RowBox[{"g", "[", 
+         RowBox[{"rangerealvar", ",", "rangeimagvar"}], "]"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"rangerealvar", ",", 
+         RowBox[{"Re", "[", 
+          RowBox[{"range", "[", 
+           RowBox[{"[", "2", "]"}], "]"}], "]"}], ",", 
+         RowBox[{"Re", "[", 
+          RowBox[{"range", "[", 
+           RowBox[{"[", "3", "]"}], "]"}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"rangeimagvar", ",", 
+         RowBox[{"Im", "[", 
+          RowBox[{"range", "[", 
+           RowBox[{"[", "2", "]"}], "]"}], "]"}], ",", 
+         RowBox[{"Im", "[", 
+          RowBox[{"range", "[", 
+           RowBox[{"[", "3", "]"}], "]"}], "]"}]}], "}"}], ",", "options", 
+       ",", 
+       RowBox[{"ColorFunction", "\[Rule]", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"Hue", "[", 
+           RowBox[{"Mod", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{"Arg", "[", 
+                RowBox[{"g", "[", 
+                 RowBox[{"#1", ",", "#2"}], "]"}], "]"}], "/", 
+               RowBox[{"(", 
+                RowBox[{"2", "*", "Pi"}], ")"}]}], "+", "1"}], ",", "1"}], 
+            "]"}], "]"}], "&"}], ")"}]}], ",", 
+       RowBox[{"ColorFunctionScaling", "\[Rule]", "False"}]}], "]"}]}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.695405175654522*^9, 3.695405175655951*^9}}],
+
+Cell[BoxData[
+ RowBox[{"ComplexFnPlot", "[", 
+  RowBox[{
+   RowBox[{"z", "!"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"z", ",", 
+     RowBox[{
+      RowBox[{"-", "4"}], "-", 
+      RowBox[{"4", "I"}]}], ",", 
+     RowBox[{"4", "+", 
+      RowBox[{"4", "I"}]}]}], "}"}], ",", 
+   RowBox[{"PlotRange", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "4"}], "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6954053028300047`*^9, 3.695405360421796*^9}}],
+
+Cell[TextData[{
+ "Another common practice is to paint the complex plane representing the \
+dependent variable ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"w", "=", 
+    RowBox[{"f", "(", "z", ")"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " in some meaningful way and then paint the complex plane representing the \
+dependent variable ",
+ Cell[BoxData[
+  FormBox["z", TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " according to the color of the location it is sent to. Here is an example."
+}], "Text",
+ CellChangeTimes->{{3.695405727383161*^9, 3.695405847577215*^9}, {
+  3.695405900084507*^9, 3.695405935499898*^9}, {3.695406920677791*^9, 
+  3.695406925389394*^9}}],
+
+Cell[TextData[{
+ "These two functions convert between complex numbers and ordered pairs. They \
+are needed because Mathematica\[CloseCurlyQuote]s built-in ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"ImageTransformation", "[", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " function expects coordinate pairs, not complex numbers. The third function \
+",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"toR2Function", "[", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " transforms an ordered pair according to a complex function ",
+ Cell[BoxData[
+  FormBox["f", TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.695406929446536*^9, 3.6954069528050547`*^9}, {
+  3.695406983389345*^9, 3.695407039785137*^9}, {3.6954071166281223`*^9, 
+  3.695407206395813*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"dc", "[", "w_", "]"}], ":=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Re", "[", "w", "]"}], ",", 
+     RowBox[{"Im", "[", "w", "]"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"c", "[", "p_", "]"}], ":=", " ", 
+   RowBox[{
+    RowBox[{"First", "[", "p", "]"}], "+", 
+    RowBox[{
+     RowBox[{"Last", "[", "p", "]"}], "*", "I"}]}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.667684702439621*^9, 3.667684874972728*^9}, {
+  3.667684906724082*^9, 3.667684912908609*^9}, {3.66768500051517*^9, 
+  3.667685007098639*^9}, {3.667685265463483*^9, 3.6676853275541353`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"toR2Function", "[", 
+   RowBox[{"p_", ",", " ", "f_"}], "]"}], ":=", 
+  RowBox[{"dc", "[", 
+   RowBox[{"f", "[", 
+    RowBox[{"c", "[", "p", "]"}], "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.695407049630505*^9, 3.695407103476338*^9}}],
+
+Cell["We get an image of a world map from WolframAlpha:", "Text",
+ CellChangeTimes->{{3.695566852749222*^9, 3.695566866746407*^9}}],
+
+Cell[BoxData[
+ RowBox[{"img", "=", 
+  RowBox[{"GeoGraphics", "[", 
+   RowBox[{
+    RowBox[{"GeoRange", "\[Rule]", "\"\<World\>\""}], ",", " ", 
+    RowBox[{"GeoBackground", "\[Rule]", "\"\<ReliefMap\>\""}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.695407374003129*^9, 3.695407376491132*^9}, {
+  3.69556684434216*^9, 3.695566850834591*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "[", "z_", "]"}], ":=", " ", 
+  SuperscriptBox["z", "2"]}]], "Input",
+ CellChangeTimes->{{3.695407553851227*^9, 3.6954075551543503`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"ImageTransformation", "[", 
+  RowBox[{"img", ",", " ", 
+   RowBox[{
+    RowBox[{"toR2Function", "[", 
+     RowBox[{"#", ",", "f"}], "]"}], "&"}], ",", " ", 
+   RowBox[{"DataRange", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1"}], ",", " ", "1"}], "}"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1"}], ",", " ", "1"}], "}"}]}], "}"}]}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.695407223156452*^9, 3.695407264676579*^9}, {
+  3.695407391531172*^9, 3.695407432883833*^9}, {3.695407521867385*^9, 
+  3.695407525154566*^9}}],
+
+Cell["\<\
+A great example of this style of visualizing complex functions is David Bau\
+\[CloseCurlyQuote]s Conformal Function Viewer: http://davidbau.com/conformal/.\
+\>", "Text",
+ CellChangeTimes->{{3.6954076423545303`*^9, 3.695407646604561*^9}, {
+  3.6954076824664288`*^9, 3.695407717481395*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["... a real - valued function.", "Section",
+ CellChangeTimes->{{3.695399299864974*^9, 3.695399318590035*^9}}],
+
+Cell["\<\
+Sometimes Mathematica's assumptions can lead to confusing results. For \
+example, we might attempt to plot the cube root of x:\
+\>", "Text",
+ CellChangeTimes->{{3.6953962400217733`*^9, 3.695396286125572*^9}, {
+   3.69539807252125*^9, 3.695398087993692*^9}, 3.695398318256274*^9, {
+   3.695398493239635*^9, 3.695398498943604*^9}, {3.695398814271042*^9, 
+   3.6953988259354477`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   SuperscriptBox["x", 
+    RowBox[{"1", "/", "3"}]], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", " ", 
+     RowBox[{"-", "3"}], ",", " ", "3"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.695398504341137*^9, 3.695398516631947*^9}}],
+
+Cell[TextData[{
+ "Notice the plot does not show the graph for negative x, because there are \
+multiple nonreal cube roots. To get the real valued cube root, use either ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"CubeRoot", "[", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " or ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"Surd", "[", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ":"
+}], "Text",
+ CellChangeTimes->{{3.6953985234325*^9, 3.6953986239591923`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Grid", "[", 
+  RowBox[{"{", 
+   RowBox[{"{", 
+    RowBox[{"\"\< CubeRoot: \>\"", ",", 
+     RowBox[{"Plot", "[", 
+      RowBox[{
+       RowBox[{"CubeRoot", "[", "x", "]"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", " ", 
+         RowBox[{"-", "3"}], ",", " ", "3"}], "}"}]}], "]"}], ",", " ", 
+     "\"\< Surd: \>\"", ",", 
+     RowBox[{"Plot", "[", 
+      RowBox[{
+       RowBox[{"Surd", "[", 
+        RowBox[{"x", ",", " ", "3"}], "]"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", " ", 
+         RowBox[{"-", "3"}], ",", " ", "3"}], "}"}]}], "]"}]}], "}"}], "}"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.6953986328792543`*^9, 3.695398710775028*^9}}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1065, 1104},
+WindowMargins->{{Automatic, 651}, {Automatic, 48}},
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
+21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 117, 1, 137, "Title"],
+Cell[700, 25, 138, 4, 121, "Subtitle"],
+Cell[CellGroupData[{
+Cell[863, 33, 100, 1, 96, "Chapter"],
+Cell[966, 36, 541, 18, 78, "Text"],
+Cell[CellGroupData[{
+Cell[1532, 58, 341, 9, 59, "Input"],
+Cell[1876, 69, 262, 7, 51, "Output"]
+}, Open  ]],
+Cell[2153, 79, 403, 7, 105, "Text"],
+Cell[CellGroupData[{
+Cell[2581, 90, 3929, 99, 28, "Input",
+ CellOpen->False],
+Cell[6513, 191, 3591, 116, 313, "Output"]
+}, Open  ]],
+Cell[10119, 310, 334, 8, 47, "Text"],
+Cell[CellGroupData[{
+Cell[10478, 322, 327, 9, 48, "Input"],
+Cell[10808, 333, 274, 6, 48, "Output"]
+}, Open  ]],
+Cell[11097, 342, 255, 5, 76, "Text"],
+Cell[CellGroupData[{
+Cell[11377, 351, 482, 11, 48, "Input"],
+Cell[11862, 364, 355, 10, 48, "Output"]
+}, Open  ]],
+Cell[12232, 377, 427, 7, 76, "Text"],
+Cell[CellGroupData[{
+Cell[12684, 388, 163, 4, 66, "Input"],
+Cell[12850, 394, 153, 4, 57, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13040, 403, 280, 7, 66, "Input"],
+Cell[13323, 412, 176, 3, 48, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13536, 420, 321, 8, 66, "Input"],
+Cell[13860, 430, 153, 3, 48, "Output"]
+}, Open  ]],
+Cell[14028, 436, 346, 6, 105, "Text"],
+Cell[CellGroupData[{
+Cell[14399, 446, 233, 6, 66, "Input"],
+Cell[14635, 454, 99, 2, 48, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14783, 462, 103, 1, 96, "Chapter"],
+Cell[14889, 465, 783, 18, 108, "Text"],
+Cell[CellGroupData[{
+Cell[15697, 487, 498, 14, 61, "Input"],
+Cell[16198, 503, 537, 16, 59, "Output"]
+}, Open  ]],
+Cell[16750, 522, 235, 4, 76, "Text"],
+Cell[CellGroupData[{
+Cell[17010, 530, 209, 4, 48, "Input"],
+Cell[17222, 536, 421, 11, 62, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17680, 552, 356, 9, 51, "Input"],
+Cell[18039, 563, 146, 3, 48, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18234, 572, 147, 2, 96, "Chapter"],
+Cell[CellGroupData[{
+Cell[18406, 578, 193, 2, 95, "Section"],
+Cell[18602, 582, 634, 17, 80, "Text"],
+Cell[CellGroupData[{
+Cell[19261, 603, 174, 4, 48, "Input"],
+Cell[19438, 609, 148, 3, 48, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19623, 617, 375, 10, 48, "Input"],
+Cell[20001, 629, 536, 19, 57, "Output"]
+}, Open  ]],
+Cell[20552, 651, 747, 25, 65, "Input"],
+Cell[21302, 678, 166, 3, 46, "Text"],
+Cell[21471, 683, 712, 18, 48, "Input"],
+Cell[22186, 703, 738, 19, 48, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22961, 727, 240, 3, 95, "Section"],
+Cell[23204, 732, 513, 12, 77, "Text"],
+Cell[23720, 746, 249, 6, 48, "Input"],
+Cell[23972, 754, 509, 13, 80, "Input"],
+Cell[24484, 769, 138, 1, 46, "Text"],
+Cell[24625, 772, 1550, 39, 204, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26212, 816, 133, 1, 95, "Section"],
+Cell[26348, 819, 1183, 40, 78, "Text"],
+Cell[27534, 861, 737, 21, 48, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28308, 887, 158, 2, 95, "Section"],
+Cell[28469, 891, 1373, 39, 142, "Text"],
+Cell[29845, 932, 196, 5, 48, "Input"],
+Cell[30044, 939, 483, 13, 48, "Input"],
+Cell[30530, 954, 486, 13, 48, "Input"],
+Cell[31019, 969, 504, 13, 48, "Input"],
+Cell[31526, 984, 928, 24, 169, "Text"],
+Cell[32457, 1010, 2094, 58, 235, "Input"],
+Cell[34554, 1070, 452, 14, 48, "Input"],
+Cell[35009, 1086, 686, 17, 107, "Text"],
+Cell[35698, 1105, 816, 21, 139, "Text"],
+Cell[36517, 1128, 651, 17, 80, "Input"],
+Cell[37171, 1147, 274, 7, 48, "Input"],
+Cell[37448, 1156, 131, 1, 46, "Text"],
+Cell[37582, 1159, 345, 8, 48, "Input"],
+Cell[37930, 1169, 176, 4, 48, "Input"],
+Cell[38109, 1175, 632, 18, 80, "Input"],
+Cell[38744, 1195, 298, 5, 76, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[39079, 1205, 114, 1, 95, "Section"],
+Cell[39196, 1208, 391, 7, 76, "Text"],
+Cell[39590, 1217, 291, 8, 51, "Input"],
+Cell[39884, 1227, 486, 14, 77, "Text"],
+Cell[40373, 1243, 709, 20, 80, "Input"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
