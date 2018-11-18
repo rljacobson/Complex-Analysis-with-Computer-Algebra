@@ -10,18 +10,164 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     23575,        608]
-NotebookOptionsPosition[     20423,        523]
-NotebookOutlinePosition[     20780,        539]
-CellTagsIndexPosition[     20737,        536]
+NotebookDataLength[     64860,       1577]
+NotebookOptionsPosition[     55374,       1426]
+NotebookOutlinePosition[     55730,       1442]
+CellTagsIndexPosition[     55687,       1439]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"GenerateMap", "[", 
+   RowBox[{"img_", ",", " ", "gore_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "tex", "}"}], ",", " ", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"tex", "=", 
+      RowBox[{"First", "@", 
+       RowBox[{"ImagePartition", "[", 
+        RowBox[{"img", ",", 
+         RowBox[{"Scaled", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"1", "/", "gore"}], ",", "1"}], "}"}], "]"}]}], "]"}]}]}],
+      ";", 
+     RowBox[{"Show", "[", 
+      RowBox[{
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"ParametricPlot", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"2", " ", 
+               RowBox[{"(", 
+                RowBox[{"i", "-", "1"}], ")"}], " ", 
+               RowBox[{"InverseGudermannian", "[", 
+                RowBox[{"\[Pi]", "/", "gore"}], "]"}]}], "+", 
+              RowBox[{"ArcTanh", "[", 
+               RowBox[{
+                RowBox[{"Cos", "[", "\[Phi]", "]"}], " ", 
+                RowBox[{"Sin", "[", "\[Lambda]", "]"}]}], "]"}]}], ",", 
+             RowBox[{"ArcTan", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"Cos", "[", "\[Phi]", "]"}], " ", 
+                RowBox[{"Cos", "[", "\[Lambda]", "]"}]}], ",", 
+               RowBox[{"Sin", "[", "\[Phi]", "]"}]}], "]"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"\[Phi]", ",", 
+             RowBox[{
+              RowBox[{"-", "\[Pi]"}], "/", "2"}], ",", 
+             RowBox[{"\[Pi]", "/", "2"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"\[Lambda]", ",", 
+             RowBox[{
+              RowBox[{"-", "\[Pi]"}], "/", "gore"}], ",", 
+             RowBox[{"\[Pi]", "/", "gore"}]}], "}"}], ",", 
+           RowBox[{"Axes", "\[Rule]", "False"}], ",", 
+           RowBox[{"BoundaryStyle", "\[Rule]", "None"}], ",", 
+           RowBox[{"Frame", "\[Rule]", "False"}], ",", 
+           RowBox[{"PlotStyle", "\[Rule]", 
+            RowBox[{"Directive", "[", 
+             RowBox[{
+              RowBox[{"Texture", "[", 
+               RowBox[{"tex", "[", 
+                RowBox[{"[", "i", "]"}], "]"}], "]"}], ",", 
+              RowBox[{"Opacity", "[", "1", "]"}]}], "]"}]}], ",", 
+           RowBox[{"TextureCoordinateFunction", "\[Rule]", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"#1", ",", "#2"}], "}"}], "&"}], ")"}]}]}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", "1", ",", "gore"}], "}"}]}], "]"}], ",", 
+       RowBox[{"PlotRange", "\[Rule]", "All"}], ",", " ", 
+       RowBox[{"ImageSize", "\[Rule]", 
+        RowBox[{"ImageDimensions", "[", "img", "]"}]}]}], "]"}]}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellOpen->False,
+ InitializationCell->True,
+ CellChangeTimes->{{3.726270105198637*^9, 3.7262701051996*^9}, {
+   3.726325694858665*^9, 3.7263257028375053`*^9}, 3.726916158566929*^9, {
+   3.726917114801013*^9, 3.726917115792776*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"0db1fe00-0bcc-4d25-bfb9-cf0e3e043812"],
 
 Cell[CellGroupData[{
+
 Cell["Making a globe from a spherical photo", "Title",
- CellChangeTimes->{{3.681327976464118*^9, 3.6813279905708027`*^9}}],
+ CellChangeTimes->{{3.681327976464118*^9, 
+  3.6813279905708027`*^9}},ExpressionUUID->"e53f6125-1f38-4f45-b1d4-\
+372c9557bbaa"],
+
+Cell[TextData[StyleBox["Robert Jacobson\nUpdated 5 April 2017",
+ FontSlant->"Italic"]], "Text",
+ CellChangeTimes->{{3.75148800655159*^9, 3.7514880108213*^9}, {
+   3.751488067737557*^9, 3.751488078228739*^9}, {3.751488161240286*^9, 
+   3.7514881621283693`*^9}, 
+   3.751488820372075*^9},ExpressionUUID->"5dd62b4f-83c3-4229-b27a-\
+aad53edd03d3"],
+
+Cell[CellGroupData[{
+
+Cell["Introduction", "Chapter",
+ CellChangeTimes->{{3.726322547568391*^9, 
+  3.726322550696835*^9}},ExpressionUUID->"bceaca3b-d32d-4aee-bf26-\
+e70bb65f50a1"],
+
+Cell[CellGroupData[{
+
+Cell["Contents", "Section",
+ CellChangeTimes->{{3.72632256937188*^9, 
+  3.726322573675222*^9}},ExpressionUUID->"17f80bdf-373f-4d2e-bced-\
+558093fa950a"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Map Generator:",
+  FontWeight->"Bold"],
+ " If you just want to make a map, skip directly to this section."
+}], "Item",
+ CellChangeTimes->{{3.726322608240603*^9, 
+  3.726322657263294*^9}},ExpressionUUID->"619cd6da-ce09-451b-adee-\
+bd5d88c83fcb"],
+
+Cell[TextData[{
+ StyleBox["3D Rendered Globe Preview:",
+  FontWeight->"Bold"],
+ " Let\[CloseCurlyQuote]s you see what your image looks like on a sphere. "
+}], "Item",
+ CellChangeTimes->{{3.726322608240603*^9, 3.726322656144223*^9}, {
+  3.726322708565144*^9, 
+  3.7263227541706142`*^9}},ExpressionUUID->"df641eeb-3a38-4ba6-b6d4-\
+0d838e89650f"],
+
+Cell[TextData[{
+ StyleBox["Technical Details:",
+  FontWeight->"Bold"],
+ " This section is a walk-through of how the code does what it does written \
+for an audience that is familiar with Mathematica but is not necessarily an \
+expert. This section also includes additional options and details for anyone \
+wanting to adapt the code for their own needs."
+}], "Item",
+ CellChangeTimes->{{3.726322608240603*^9, 3.726322656144223*^9}, {
+  3.726322708565144*^9, 
+  3.72632287086664*^9}},ExpressionUUID->"5b80a6f8-bbf6-4f65-b418-\
+33a103d7101a"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["A Note from the Author", "Section",
+ CellChangeTimes->{{3.7262673818019457`*^9, 3.7262673855050793`*^9}, {
+  3.7262675514797487`*^9, 3.726267566427457*^9}, {3.7263225880166616`*^9, 
+  3.7263225882326*^9}},ExpressionUUID->"80071e20-f84b-48cf-97c9-22e306aae1be"],
 
 Cell[TextData[{
  "Spherical photos taken with spherical cameras like the Ricoh Theta S can be \
@@ -30,17 +176,17 @@ These photos are stored in a rectangular JPEG file as a so-called \
 equirectangular projection in which degrees latitude and longitude correspond \
 linearly to position in the x axis and y axis respectively. To construct a \
 physical globe using these files we may redraw the \[OpenCurlyDoubleQuote]map\
-\[CloseCurlyDoubleQuote] using an interrupted sinusoidal projection, print \
-out the map on paper, cut it out, and glue along the edges to form a globe. \n\
-\nThe ",
+\[CloseCurlyDoubleQuote] using a transverse Mercator projection, print out \
+the map on paper, cut it out, and glue along the edges to form a globe. \n\n\
+The ",
  StyleBox["Mathematica",
   FontSlant->"Italic"],
  " code below takes a spherical photo in equirectangular format as input and \
-produces image files of the interrupted sinusoidal projection: one file of \
-the complete map; and another file containing the first and last lobes of the \
-first file drawn as adjacent lobes, as they are on the globe, which we call a \
-patch. The patch can assist in closing the last seem of the constructed \
-globe. The code should work with ",
+produces image files of the transverse Mercator projection: one file of the \
+complete map; and another file containing the first and last lobes of the \
+first file drawn as adjacent gores (lobes), as they are on the globe, which \
+we call a patch. The patch can assist in closing the last seem of the \
+constructed globe. The code should work with ",
  StyleBox["Mathematica 10",
   FontSlant->"Italic"],
  " or above.\n\nIf you do anything interesting with this or if you use it in \
@@ -57,7 +203,11 @@ obligation to do so.\n\nBest regards,\n\nRobert Jacobson",
   3.6813295723590727`*^9, 3.6813297048754473`*^9}, {3.68132974016234*^9, 
   3.681329755362118*^9}, {3.681329862679573*^9, 3.6813298695433397`*^9}, {
   3.681330394235092*^9, 3.6813304170989447`*^9}, {3.681330852360785*^9, 
-  3.681330910551766*^9}, {3.681336833020425*^9, 3.681336866310079*^9}}],
+  3.681330910551766*^9}, {3.681336833020425*^9, 3.681336866310079*^9}, {
+  3.72626751207712*^9, 3.726267537824863*^9}, {3.726267596184613*^9, 
+  3.726267601592149*^9}, {3.726268731863204*^9, 
+  3.726268736150943*^9}},ExpressionUUID->"d53fdf5f-0f5d-4b49-9d92-\
+e77ee9f12506"],
 
 Cell[TextData[{
  StyleBox["LICENSE: ",
@@ -72,51 +222,588 @@ notebook to the public domain. ",
    3.681330055138913*^9, 3.681330115921604*^9}, {3.68133014936068*^9, 
    3.6813302316550426`*^9}, {3.681330276909965*^9, 3.681330328892511*^9}, {
    3.681330430179257*^9, 3.681330509808445*^9}, 3.681330712285755*^9, {
-   3.6813307750596123`*^9, 3.68133080241787*^9}}],
+   3.6813307750596123`*^9, 
+   3.68133080241787*^9}},ExpressionUUID->"cbee2383-d5da-41f4-a7c0-\
+c544b9faeb8d"]
+}, Open  ]]
+}, Open  ]],
 
 Cell[CellGroupData[{
 
-Cell["Initialization Code", "Section",
- CellChangeTimes->{{3.680279680818522*^9, 3.680279685409381*^9}}],
+Cell["Map Generator", "Chapter",
+ CellChangeTimes->{{3.7262702586193323`*^9, 
+  3.726270262022448*^9}},ExpressionUUID->"e3988dbc-5187-49c4-96a1-\
+5181a8c79ab8"],
+
+Cell["To generate a map, we need to:", "Text",
+ CellChangeTimes->{{3.726270304393919*^9, 
+  3.726270382513474*^9}},ExpressionUUID->"67a85801-5762-4888-9ada-\
+5b7d627482b6"],
+
+Cell[CellGroupData[{
+
+Cell["Import the spherical photo as an equirectangular .jpg file.", \
+"ItemNumbered",
+ CellChangeTimes->{{3.7262703965898533`*^9, 
+  3.72627040373542*^9}},ExpressionUUID->"699023b0-dd57-4d7a-ac1e-\
+413397ab1474"],
+
+Cell["Give the imported image to the map generator function.", "ItemNumbered",
+ CellChangeTimes->{{3.7262703965898533`*^9, 
+  3.726270442911336*^9}},ExpressionUUID->"ed180325-f037-48db-9ad1-\
+125998caf74e"],
+
+Cell["Save or print the resulting map.", "ItemNumbered",
+ CellChangeTimes->{{3.7262703965898533`*^9, 
+  3.7262704817783527`*^9}},ExpressionUUID->"5e337ffd-18f2-4edb-b2de-\
+29c9d333ea53"],
+
+Cell["\<\
+Optionally generate a \[OpenCurlyDoubleQuote]patch,\[CloseCurlyDoubleQuote] \
+that is, the first and last gores, to make it easier to seal the final seem \
+of the globe.\
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.7262703965898533`*^9, 
+  3.726270544404282*^9}},ExpressionUUID->"befcf9d1-c0bd-4e1f-8740-\
+6c4d48544699"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["1. Image Import", "Section",
+ CellChangeTimes->{{3.680279776351989*^9, 3.680279778927932*^9}, {
+  3.726270578793606*^9, 
+  3.7262705791119204`*^9}},ExpressionUUID->"989d5e31-e366-4a39-b0f8-\
+fa978fb1745d"],
+
+Cell["\<\
+This notebook assumes the image we start with is an equirectangular \
+projection. Most spherical cameras use this format.\
+\>", "Text",
+ CellChangeTimes->{{3.726922250151067*^9, 
+  3.726922301046109*^9}},ExpressionUUID->"36b21c82-089d-41ae-a6b7-\
+dbd6a9094969"],
+
+Cell[TextData[{
+ "There are many ways to insert an image into this notebook: ",
+ ButtonBox["https://reference.wolfram.com/language/howto/\
+GetAnImageIntoTheWolframSystem.html",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://reference.wolfram.com/language/howto/\
+GetAnImageIntoTheWolframSystem.html"], None},
+  ButtonNote->
+   "https://reference.wolfram.com/language/howto/\
+GetAnImageIntoTheWolframSystem.html"],
+ ". \nWe specify the location of the image to import below."
+}], "Text",
+ CellChangeTimes->{{3.700414026110053*^9, 3.700414048429014*^9}, 
+   3.700414087037736*^9, {3.70041416130796*^9, 
+   3.7004141961725807`*^9}},ExpressionUUID->"0e267fb4-3b84-47ca-a4cc-\
+53ea3562d3df"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"mapimage", " ", "=", " ", 
+   RowBox[{
+   "Import", "[", "\"\</path/to/image/SphericalPhoto.jpg\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Show", "[", 
+  RowBox[{"mapimage", ",", " ", 
+   RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]}], "Input",
+ CellChangeTimes->{
+  3.680279888310463*^9, {3.680280499976821*^9, 3.680280501532168*^9}, {
+   3.680281311794519*^9, 3.68028131323069*^9}, 3.6802819950837708`*^9, {
+   3.680282327622115*^9, 3.6802823286060133`*^9}, 3.680282471659732*^9, {
+   3.680283328934478*^9, 3.6802833352691517`*^9}, {3.6813270364093*^9, 
+   3.681327044985016*^9}, 3.6813273167863703`*^9, {3.7004139377034397`*^9, 
+   3.700413945709668*^9}, 3.700414199100526*^9, 3.7269170084806223`*^9, {
+   3.726921815137155*^9, 
+   3.726921815616849*^9}},ExpressionUUID->"967b7e13-1c06-4284-b23f-\
+a47acde51847"],
+
+Cell["Example using an image from the internet:", "Text",
+ CellChangeTimes->{{3.751487598800846*^9, 3.751487599928329*^9}, {
+  3.751487668000538*^9, 
+  3.751487672223755*^9}},ExpressionUUID->"85405499-25ea-4c32-8c4f-\
+b606f99f85e9"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"mapimage", " ", "=", " ", 
+   RowBox[{
+   "Import", "[", "\"\<https://i.stack.imgur.com/jbMWD.jpg\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Show", "[", 
+  RowBox[{"mapimage", ",", " ", 
+   RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]}], "Input",
+ CellChangeTimes->{
+  3.680279888310463*^9, {3.680280499976821*^9, 3.680280501532168*^9}, {
+   3.680281311794519*^9, 3.68028131323069*^9}, 3.6802819950837708`*^9, {
+   3.680282327622115*^9, 3.6802823286060133`*^9}, 3.680282471659732*^9, {
+   3.680283328934478*^9, 3.6802833352691517`*^9}, {3.6813270364093*^9, 
+   3.681327044985016*^9}, 3.6813273167863703`*^9, {3.7004139377034397`*^9, 
+   3.700413945709668*^9}, 3.700414199100526*^9, 3.7269170084806223`*^9, {
+   3.726921815137155*^9, 3.726921815616849*^9}, {3.751487616325963*^9, 
+   3.751487620380436*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"af2c5f82-fa1b-424a-866c-7a92079977d5"],
+
+Cell["\<\
+Or, if you prefer, you can ask Wolfram Alpha for a map image:\
+\>", "Text",
+ CellChangeTimes->{{3.726917014432428*^9, 
+  3.726917033016374*^9}},ExpressionUUID->"7713aa40-97fb-4413-98a7-\
+e7af241ac944"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"mapimage", " ", "=", " ", 
+   RowBox[{"GeoImage", "[", 
+    RowBox[{"\"\<World\>\"", ",", " ", "\"\<ReliefMap\>\"", ",", 
+     RowBox[{"GeoProjection", "\[Rule]", "\"\<Equirectangular\>\""}], ",", 
+     RowBox[{"GeoRangePadding", "\[Rule]", "None"}], ",", " ", 
+     RowBox[{"ImageSize", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"2048", ",", "1024"}], "}"}]}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Show", "[", 
+  RowBox[{"mapimage", ",", " ", 
+   RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.726917064184821*^9, 3.72691706517986*^9}, {
+  3.726921794763097*^9, 3.726921795505103*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"6ff82188-d3c5-43ef-8e28-e7c779345b7a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["2. Generate the Map", "Section",
+ CellChangeTimes->{{3.7262705924838657`*^9, 
+  3.726270606759817*^9}},ExpressionUUID->"959e42a3-9c88-49de-9b6e-\
+d5273d2391e5"],
+
+Cell["\<\
+This notebook automatically defines the custom GenerateMap[] function. If \
+GenerateMap[] doesn\[CloseCurlyQuote]t seem to do anything, open up the cell \
+at the top of the notebook and evaluate it to define GenerateMap[].\
+\>", "Text",
+ CellChangeTimes->{{3.726270613028936*^9, 3.7262706840239773`*^9}, {
+  3.726917177352755*^9, 3.7269171931116257`*^9}, {3.726917777837653*^9, 
+  3.726917782181284*^9}},ExpressionUUID->"a9e9389e-2408-40a7-a2ed-\
+0ab7f4b5feef"],
+
+Cell["\<\
+Show the original map image one last time to make sure everything is right:\
+\>", "Text",
+ CellChangeTimes->{{3.7269218816483803`*^9, 
+  3.726921901944037*^9}},ExpressionUUID->"564a0a33-63fb-49b6-9547-\
+a143fc376156"],
+
+Cell[BoxData[
+ RowBox[{"Show", "[", 
+  RowBox[{"mapimage", ",", " ", 
+   RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.726917461350522*^9, 3.726917513290894*^9}, {
+  3.726917581479217*^9, 3.726917632642829*^9}, {3.726917727799612*^9, 
+  3.726917761525981*^9}, {3.726921838769931*^9, 
+  3.726921848816719*^9}},ExpressionUUID->"0b4cb40a-9f44-4cd5-a92c-\
+749e11d2a925"],
+
+Cell["\<\
+Generate the globe map with 12 gores (lobes, segments) and put it in the \
+globemap variable:\
+\>", "Text",
+ CellChangeTimes->{{3.7269218528255873`*^9, 3.726921875128528*^9}, {
+  3.72692192030375*^9, 
+  3.7269219294078693`*^9}},ExpressionUUID->"4fee71fa-b1ad-4152-9f14-\
+a24dbcfa0061"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"globemap", " ", "=", " ", 
+   RowBox[{"GenerateMap", "[", 
+    RowBox[{"mapimage", ",", " ", "12"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Show", "[", 
+  RowBox[{"globemap", ",", " ", 
+   RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7262706938001833`*^9, 3.726270701915805*^9}, {
+  3.726917400128153*^9, 3.726917411014629*^9}, {3.726917656726623*^9, 
+  3.726917657053866*^9}, {3.7269177043267*^9, 3.726917707049843*^9}, {
+  3.726917789861403*^9, 3.72691781927676*^9}, {3.726921912216267*^9, 
+  3.7269219158960752`*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"67a0746f-e69b-4d9d-b5e8-07b15b4094cc"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["3. Save the Map to a File", "Section",
+ CellChangeTimes->{{3.726922364206633*^9, 
+  3.7269223927991333`*^9}},ExpressionUUID->"77b1d7b5-3822-4284-bcc0-\
+c6730805a319"],
+
+Cell["\<\
+There are several ways to output a file. For smaller images, you can display \
+the map at full size just by evaluating its variable name by itself. Then \
+right-click on the output image and click \[OpenCurlyDoubleQuote]Save Graphic \
+As...\[CloseCurlyDoubleQuote] in the pop-up menu.\
+\>", "Text",
+ CellChangeTimes->{{3.726922475332663*^9, 
+  3.726922615076527*^9}},ExpressionUUID->"39223299-1590-473a-8d43-\
+f06b69a555e3"],
+
+Cell[BoxData["globemap"], "Input",
+ CellChangeTimes->{{3.726922532719365*^9, 
+  3.726922536309153*^9}},ExpressionUUID->"5d03717f-0b17-4f01-bd4c-\
+57c6fd67ae6c"],
+
+Cell["\<\
+Larger images can be unwieldy in Mathematica notebooks, so for larger images \
+it may be easier to use the Export[] function directly:\
+\>", "Text",
+ CellChangeTimes->{{3.726922624205007*^9, 
+  3.726922690288555*^9}},ExpressionUUID->"ee6c3dd2-5567-422c-a081-\
+cb61800bca47"],
+
+Cell[BoxData[
+ RowBox[{"Export", "[", 
+  RowBox[{"\"\</path/to/output/globemap.jpg\>\"", ",", " ", "globemap"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.726922697864483*^9, 3.7269227307477093`*^9}, {
+  3.726922826002109*^9, 
+  3.72692284585674*^9}},ExpressionUUID->"85f911ce-05ba-4c3d-a330-\
+02b5d5a506f4"],
+
+Cell["\<\
+You must change the first argument to the Export[] function to where you want \
+to save the image. The image format is automatically determined by the file \
+extension you supply. There is a \[OpenCurlyDoubleQuote]shortcut\
+\[CloseCurlyDoubleQuote] if you just want to save it to the same directory \
+this notebook is stored:\
+\>", "Text",
+ CellChangeTimes->{{3.7269227394906673`*^9, 3.726922820183435*^9}, {
+  3.726922854273199*^9, 
+  3.726922860745385*^9}},ExpressionUUID->"ee94196c-551b-47d1-a765-\
+8ed19bd6c6d0"],
+
+Cell[BoxData[
+ RowBox[{"Export", "[", 
+  RowBox[{
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"NotebookDirectory", "[", "]"}], ",", "\"\<globemap.jpg\>\""}], 
+     "}"}], "]"}], ",", " ", "globemap"}], "]"}]], "Input",
+ CellChangeTimes->{{3.726922832215311*^9, 3.726922840032353*^9}, {
+  3.7269228716420593`*^9, 
+  3.726922896480255*^9}},ExpressionUUID->"183fdbb4-72d8-4332-9e57-\
+6773119c009d"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["3D Rendered Globe Preview", "Chapter",
+ CellChangeTimes->{{3.68028015826628*^9, 3.680280176201305*^9}, {
+  3.726322667504039*^9, 
+  3.72632270185964*^9}},ExpressionUUID->"29f513c7-48b9-41db-98d6-\
+5a58d01dc243"],
+
+Cell["If we haven\[CloseCurlyQuote]t imported an image yet, do so here:", \
+"Text",
+ CellChangeTimes->{{3.726921953207622*^9, 
+  3.7269219690076027`*^9}},ExpressionUUID->"e901f5b4-8ebd-41bb-ae2f-\
+6cfbd499ccb7"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"mapimage", " ", "=", " ", 
+   RowBox[{"Import", "[", "\"\</path/to/spherical/image.jpg\>\"", "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.6980807829371347`*^9, 3.6980808128381557`*^9}, {
+  3.7004143489328136`*^9, 
+  3.7004143586436777`*^9}},ExpressionUUID->"6cc40f27-d22a-439f-a862-\
+fbacd9fd5d0e"],
+
+Cell["\<\
+Or, if you prefer, you can ask Wolfram Alpha for a map image:\
+\>", "Text",
+ CellChangeTimes->{{3.726917014432428*^9, 
+  3.726917033016374*^9}},ExpressionUUID->"e306d5bf-5235-4f49-9ab6-\
+c00b270610ee"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"mapimage", " ", "=", " ", 
+   RowBox[{"GeoImage", "[", 
+    RowBox[{"\"\<World\>\"", ",", " ", "\"\<ReliefMap\>\"", ",", 
+     RowBox[{"GeoProjection", "\[Rule]", "\"\<Equirectangular\>\""}], ",", 
+     RowBox[{"GeoRangePadding", "\[Rule]", "None"}], ",", " ", 
+     RowBox[{"ImageSize", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"2048", ",", "1024"}], "}"}]}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Show", "[", 
+  RowBox[{"mapimage", ",", " ", 
+   RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]}], "Input",ExpressionUU\
+ID->"3cd71b5a-8f83-411d-be73-15fa5ae9ca79"],
+
+Cell["Now wrap it onto a sphere:", "Text",
+ CellChangeTimes->{{3.726921972296547*^9, 
+  3.726921990631545*^9}},ExpressionUUID->"9316b080-80bf-45af-acc0-\
+436e5ad2038f"],
+
+Cell[BoxData[
+ RowBox[{"SphericalPlot3D", "[", 
+  RowBox[{"1", ",", 
+   RowBox[{"{", 
+    RowBox[{"u", ",", "0", ",", "Pi"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"v", ",", "0", ",", 
+     RowBox[{"2", " ", "Pi"}]}], "}"}], ",", 
+   RowBox[{"PlotPoints", "\[Rule]", "20"}], ",", 
+   RowBox[{"MaxRecursion", "\[Rule]", "0"}], ",", 
+   RowBox[{"Mesh", "\[Rule]", "None"}], ",", 
+   RowBox[{"Axes", "\[Rule]", "False"}], ",", 
+   RowBox[{"Boxed", "\[Rule]", "False"}], ",", " ", 
+   RowBox[{"TextureCoordinateFunction", "\[Rule]", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"#5", ",", 
+        RowBox[{"1", "-", "#4"}]}], "}"}], "&"}], ")"}]}], ",", 
+   RowBox[{"PlotStyle", "\[Rule]", 
+    RowBox[{"Directive", "[", 
+     RowBox[{
+      RowBox[{"Texture", "[", "mapimage", "]"}], ",", 
+      RowBox[{"Specularity", "[", 
+       RowBox[{"White", ",", "50"}], "]"}]}], "]"}]}], ",", 
+   RowBox[{"Lighting", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"\"\<Ambient\>\"", ",", " ", "White"}], "}"}], "}"}]}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.679949324130884*^9, 3.679949337400263*^9}, {
+  3.6799494067086487`*^9, 3.679949447603108*^9}, {3.6799494891557617`*^9, 
+  3.679949504243301*^9}, {3.69808087661653*^9, 3.698080958766767*^9}, {
+  3.698081011638237*^9, 3.698081049069886*^9}, {3.698081117062586*^9, 
+  3.698081135340906*^9}, {3.6980812888414793`*^9, 3.6980812908048563`*^9}, {
+  3.6980813227696323`*^9, 3.6980813240164413`*^9}, {3.698081398081959*^9, 
+  3.698081405985577*^9}, {3.6980814901854467`*^9, 
+  3.6980814921438627`*^9}},ExpressionUUID->"96591c53-d586-4158-a675-\
+df6743e4586d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Technical Details", "Chapter",
+ CellChangeTimes->{{3.726267633897729*^9, 3.726267654630702*^9}, {
+   3.7262679868165073`*^9, 3.726267988784051*^9}, 3.726270230330776*^9, {
+   3.726270768995461*^9, 
+   3.726270769842576*^9}},ExpressionUUID->"fc5bb304-5e38-4b9d-97fe-\
+729194027c14"],
+
+Cell[TextData[{
+ "In this section I present a brief explanation of all of the pieces of the \
+code that produces the map. If you only want to make a map, skip to the ",
+ StyleBox["Map Generator",
+  FontWeight->"Bold"],
+ " section."
+}], "Text",
+ CellChangeTimes->{{3.726268566446982*^9, 3.726268649014979*^9}, {
+  3.726322945711627*^9, 
+  3.72632295727769*^9}},ExpressionUUID->"6a787272-ad3b-4584-b6fd-\
+1d67b559a2cd"],
+
+Cell[CellGroupData[{
+
+Cell["Code to Generate a Gore", "Section",
+ CellChangeTimes->{{3.680279680818522*^9, 3.680279685409381*^9}, {
+  3.726267963100438*^9, 
+  3.726267971832251*^9}},ExpressionUUID->"9c00d26f-b4e7-4a72-9969-\
+282e695e3a4c"],
+
+Cell[CellGroupData[{
+
+Cell["Method 1 : Using the built - in GeoGraphics[] function", "Subsection",
+ CellChangeTimes->{{3.726323369494166*^9, 
+  3.726323408732955*^9}},ExpressionUUID->"b1919c74-2363-4521-a612-\
+7ab3d7d703b2"],
+
+Cell["\<\
+This first method allows use to use any of the map projections that \
+Mathematica knows about. The downside is that it\[CloseCurlyQuote]s a lot \
+slower than Method 2.\
+\>", "Text",
+ CellChangeTimes->{{3.7269164801931143`*^9, 3.726916484148734*^9}, {
+  3.726916565931353*^9, 
+  3.726916597026373*^9}},ExpressionUUID->"66e37cfa-d44a-44c5-9187-\
+741b66c64037"],
+
+Cell[CellGroupData[{
+
+Cell["Choice of projection", "Subsubsection",
+ CellChangeTimes->{{3.726265961104354*^9, 3.72626596462014*^9}, 
+   3.726324019721591*^9},ExpressionUUID->"fd9070c0-e3d2-4054-b548-\
+7bfd1fe82e27"],
+
+Cell["\<\
+This first method allows use to use any of the map projections that \
+Mathematica knows about. The GeoProjectionData[] function (with no arguments) \
+gives you a list of all of the different projections Mathematica knows. We \
+must choose an appropriate projection for the gores/lobes. Any of the \
+following seem to work well, though the internet seems to think the \
+transverse Mercator projection is best for this application. The sinusoidal \
+projection is interesting, because it does not produce straight lines in the \
+transverse direction of the gore. Instead, lines appear as they would if the \
+surface curvature of the gore were equal in both directions just like the \
+curvature of a literal segment of a sphere. I have found this to be \
+aesthetically undesirable when printing on paper or cardboard.\
+\>", "Text",
+ CellChangeTimes->{{3.726265970300097*^9, 3.726266047827588*^9}, {
+  3.7262676826826563`*^9, 3.72626771285428*^9}, {3.726267874251108*^9, 
+  3.726267914624983*^9}, {3.72626830463437*^9, 3.726268526252184*^9}, {
+  3.726268759851397*^9, 3.726268826310019*^9}, {3.726323450183371*^9, 
+  3.726323535002359*^9}, {3.7263235670779657`*^9, 
+  3.726323582545643*^9}},ExpressionUUID->"c62a168a-4e87-42bb-8205-\
+9b855cdde749"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"goreProjection", "=", "\"\<RectangularPolyconic\>\""}], ";"}], 
+  " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Same", " ", "as", " ", "American", " ", 
+    RowBox[{"Polyconic", "."}]}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.726266051844812*^9, 3.726266075631386*^9}, {
+  3.726267029395838*^9, 
+  3.726267049943612*^9}},ExpressionUUID->"f4416cf4-50b4-4853-a766-\
+f4d05c6c41c3"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"goreProjection", "=", "\"\<Sinusoidal\>\""}], ";"}]], "Input",
+ CellChangeTimes->{{3.7262678070569153`*^9, 
+  3.726267816593699*^9}},ExpressionUUID->"a530d295-b61d-4ecb-a413-\
+9f4b1a1573ba"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"goreProjection", "=", "\"\<TransverseMercator\>\""}], ";"}], " ", 
+  
+  RowBox[{"(*", " ", 
+   RowBox[{"Default", "."}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.726266080907674*^9, 3.726266084395537*^9}, {
+  3.7262686588192587`*^9, 
+  3.7262686642871313`*^9}},ExpressionUUID->"5ee3c512-b9e0-490e-a01c-\
+decfe1899e00"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["GeoGraphics[]-based code", "Subsubsection",
+ CellChangeTimes->{{3.7263236078649073`*^9, 3.7263236271525927`*^9}, 
+   3.72632402280962*^9},ExpressionUUID->"5635cf1f-a148-4f7f-a73e-\
+28d036500503"],
+
+Cell[TextData[{
+ "We slice up the equirectangular image into the rectangular pieces each of \
+which will become a gore. We choose ",
+ Cell[BoxData[
+  FormBox["\[CapitalDelta]", TraditionalForm]],ExpressionUUID->
+  "1e8e42da-a6ff-495f-8369-87c5c85831e1"],
+ " to be the degrees per segment, so number of segments is ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["\[CapitalDelta]", 
+    RowBox[{"360", "\[Degree]"}]], TraditionalForm]],ExpressionUUID->
+  "306cf3da-7460-45d9-810d-4843e8f61e5c"],
+ ". The number ",
+ Cell[BoxData[
+  FormBox["\[Lambda]", TraditionalForm]],ExpressionUUID->
+  "61aff936-1579-4fa7-af63-f62baf337b3f"],
+ " is the center longitude of the given gore, so \[Lambda] will range from \
+-180\[Degree] to 180\[Degree]-\[CapitalDelta]. Note that we do not use \
+Mathematica\[CloseCurlyQuote]s built-in units of Degree in our code. We could \
+have specified the number of gores instead of the degrees per segment, but \
+since Mathematica\[CloseCurlyQuote]s GeoGraphics/GeoProjection uses degrees, \
+it makes sense for us to use degrees as well."
+}], "Text",
+ CellChangeTimes->{{3.72626868999396*^9, 3.72626872039044*^9}, {
+  3.726268908797799*^9, 3.726268984664587*^9}, {3.726269019835353*^9, 
+  3.726269100783565*^9}, {3.726269161687361*^9, 3.7262692071147346`*^9}, {
+  3.726269244342779*^9, 3.726269322602066*^9}, {3.7263236475727262`*^9, 
+  3.726323681661311*^9}, {3.7263237249931803`*^9, 
+  3.726323781367899*^9}},ExpressionUUID->"0f23dc7b-9fa8-408b-abb8-\
+233d3ed72502"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"getSlice", "[", 
+    RowBox[{"\[Lambda]_", ",", " ", "\[CapitalDelta]_", ",", " ", "image_"}], 
+    "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "width", ",", " ", "height", ",", " ", "lpos", ",", " ", "rpos"}], 
+      "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"width", ",", " ", "height"}], "}"}], "=", 
+       RowBox[{"ImageDimensions", "[", "image", "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"lpos", " ", "=", " ", 
+       RowBox[{
+        FractionBox[
+         RowBox[{"(", 
+          RowBox[{"\[Lambda]", "+", "180"}], ")"}], "360"], "*", "width"}]}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{"rpos", "=", 
+       RowBox[{"lpos", " ", "+", " ", 
+        RowBox[{"width", "*", 
+         FractionBox["\[CapitalDelta]", "360"]}]}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"ImageTake", "[", 
+       RowBox[{"image", ",", " ", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", " ", "height"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"lpos", ",", " ", "rpos"}], "}"}]}], "]"}]}]}], 
+    "\[IndentingNewLine]", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.6800226617859163`*^9, 3.680022719417549*^9}, {
+   3.6802794969978437`*^9, 3.6802795610779057`*^9}, {3.68028010070844*^9, 
+   3.680280129882853*^9}, {3.680283306143648*^9, 3.68028330973426*^9}, {
+   3.681326997499189*^9, 3.681327024858129*^9}, 3.6813274873456917`*^9, {
+   3.681330983078827*^9, 3.681331002391767*^9}, 3.681331114532028*^9, {
+   3.7262651442163563`*^9, 3.7262651500952377`*^9}, 3.7262651929198503`*^9, {
+   3.726265440918312*^9, 3.726265444696989*^9}, 3.7262657937519073`*^9, 
+   3.726266192752571*^9, {3.72626934895848*^9, 3.726269357410181*^9}, {
+   3.726269607466895*^9, 3.726269665064136*^9}, 3.7263232757848043`*^9, 
+   3.7263237889077806`*^9},ExpressionUUID->"ba3ccf17-4857-4a15-9c73-\
+cea09cdce7a5"],
+
+Cell["\<\
+Next we use Mathematica\[CloseCurlyQuote]s built-in GeoGraphics[] function to \
+project our slice onto a gore using the given projection, or the transverse \
+Mercator project if we didn\[CloseCurlyQuote]t specify a projection.\
+\>", "Text",
+ CellChangeTimes->{{3.726269674322463*^9, 
+  3.7262697480905657`*^9}},ExpressionUUID->"4aae34bf-c790-4df3-b7d8-\
+536fe2903e46"],
 
 Cell[BoxData[{
  RowBox[{
   RowBox[{
-   RowBox[{
-    RowBox[{"getSlice", "[", 
-     RowBox[{"\[Lambda]_", ",", " ", "\[CapitalDelta]_", ",", " ", "image_"}],
-      "]"}], ":=", 
-    RowBox[{"Module", "[", 
+   RowBox[{"goreProjection", "=", 
+    RowBox[{"If", "[", 
      RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-       "width", ",", " ", "height", ",", " ", "lpos", ",", " ", "rpos"}], 
-       "}"}], ",", "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"width", ",", " ", "height"}], "}"}], "=", 
-        RowBox[{"ImageDimensions", "[", "image", "]"}]}], ";", 
-       "\[IndentingNewLine]", 
-       RowBox[{"lpos", " ", "=", " ", 
-        RowBox[{
-         FractionBox[
-          RowBox[{"(", 
-           RowBox[{"\[Lambda]", "+", "180"}], ")"}], "360"], "*", "width"}]}],
-        ";", "\[IndentingNewLine]", 
-       RowBox[{"rpos", "=", 
-        RowBox[{"lpos", " ", "+", " ", 
-         RowBox[{"width", "*", 
-          FractionBox["\[CapitalDelta]", "360"]}]}]}], ";", 
-       "\[IndentingNewLine]", 
-       RowBox[{"ImageTake", "[", 
-        RowBox[{"image", ",", " ", 
-         RowBox[{"{", 
-          RowBox[{"0", ",", " ", "height"}], "}"}], ",", 
-         RowBox[{"{", 
-          RowBox[{"lpos", ",", " ", "rpos"}], "}"}]}], "]"}]}]}], 
-     "\[IndentingNewLine]", "]"}]}], ";"}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+      RowBox[{"ValueQ", "[", "goreProjection", "]"}], ",", " ", 
+      "goreProjection", ",", " ", "\"\<TransverseMercator\>\""}], "]"}]}], 
+   ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"getGeoGraphics", "[", 
@@ -144,7 +831,7 @@ Cell[BoxData[{
      ",", "\[IndentingNewLine]", 
      RowBox[{"GeoProjection", "\[Rule]", 
       RowBox[{"{", 
-       RowBox[{"\"\<TransverseMercator\>\"", ",", 
+       RowBox[{"goreProjection", ",", 
         RowBox[{"\"\<Centering\>\"", "\[Rule]", 
          RowBox[{"{", 
           RowBox[{"0", ",", 
@@ -157,36 +844,308 @@ Cell[BoxData[{
    3.6802794969978437`*^9, 3.6802795610779057`*^9}, {3.68028010070844*^9, 
    3.680280129882853*^9}, {3.680283306143648*^9, 3.68028330973426*^9}, {
    3.681326997499189*^9, 3.681327024858129*^9}, 3.6813274873456917`*^9, {
-   3.681330983078827*^9, 3.681331002391767*^9}, 3.681331114532028*^9}]
+   3.681330983078827*^9, 3.681331002391767*^9}, 3.681331114532028*^9, {
+   3.7262651442163563`*^9, 3.7262651500952377`*^9}, 3.7262651929198503`*^9, {
+   3.726265440918312*^9, 3.726265444696989*^9}, 3.7262657937519073`*^9, 
+   3.726266192752571*^9, {3.72626934895848*^9, 3.726269357410181*^9}, {
+   3.726269607466895*^9, 
+   3.726269670703492*^9}},ExpressionUUID->"3070b3b7-d25e-469b-811f-\
+8c052ada0ed0"],
+
+Cell["\<\
+Unfortunately, this code is very slow. The next method follows code from \
+Mathematica StackExchange users Young and J.M. and runs much faster but at \
+the cost of \[OpenCurlyDoubleQuote]hard coding\[CloseCurlyDoubleQuote] the \
+mathematical parametric projection for the transverse Mercator map projection.\
+\>", "Text",
+ CellChangeTimes->{{3.726269881439485*^9, 3.7262698992773848`*^9}, {
+  3.7262699902654743`*^9, 3.726270028284277*^9}, {3.726323818111532*^9, 
+  3.726323968630101*^9}},ExpressionUUID->"d568c475-dda6-4fac-8f4d-\
+51b89dd725d4"]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Method 2: Plotting the transverse Mercator map projection directly\
+\>", "Subsection",
+ CellChangeTimes->{{3.726269881439485*^9, 3.7262698992773848`*^9}, {
+  3.7262699902654743`*^9, 3.726270028284277*^9}, {3.726323818111532*^9, 
+  3.726324051001239*^9}},ExpressionUUID->"8d7dc36c-3c26-4166-be79-\
+bdcd5605b0bf"],
+
+Cell["\<\
+The next method follows code from Mathematica StackExchange users Young and \
+J.M. and runs much faster but at the cost of \"hard coding\" the mathematical \
+parametric projection for the transverse Mercator map projection. Of course, \
+one could substitute the parametric equations for another map projection if \
+desired\[LongDash]or improve this notebook by adding a catalog of projections \
+from which the user can select when calling the function.\
+\>", "Text",
+ CellChangeTimes->{{3.7263247221944942`*^9, 3.726324775539946*^9}, {
+  3.726325572474766*^9, 
+  3.7263256458213263`*^9}},ExpressionUUID->"e0f34197-17d7-432e-a8c1-\
+5a33d32735dd"],
+
+Cell[TextData[{
+ "User Young on mathematica.stackexchange.com suggests the following at:\n",
+ ButtonBox["https://mathematica.stackexchange.com/questions/121481/how-can-i-\
+generate-an-interrupted-projection-of-a-world-map",
+  BaseStyle->"Hyperlink",
+  ButtonData->{"The following code comes from ", None}]
+}], "Text",
+ CellChangeTimes->{{3.726269881439485*^9, 3.7262698992773848`*^9}, {
+  3.7262699902654743`*^9, 3.726270028284277*^9}, {3.726323818111532*^9, 
+  3.7263240621415157`*^9}, {3.726324191449945*^9, 
+  3.726324203176422*^9}},ExpressionUUID->"ab8ce8c1-6e2c-4bcc-860f-\
+17639b7786b4"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"makeMap", "[", 
+   RowBox[{"img_", ",", " ", "gore_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "tex", "}"}], ",", " ", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"tex", "=", 
+      RowBox[{"First", "@", 
+       RowBox[{"ImagePartition", "[", 
+        RowBox[{"img", ",", 
+         RowBox[{"Scaled", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"1", "/", "gore"}], ",", "1"}], "}"}], "]"}]}], "]"}]}]}],
+      ";", "\[IndentingNewLine]", 
+     RowBox[{"ImageAssemble", "[", 
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"ParametricPlot", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"ArcTanh", "[", 
+             RowBox[{
+              RowBox[{"Cos", "[", "\[Phi]", "]"}], " ", 
+              RowBox[{"Sin", "[", "\[Lambda]", "]"}]}], "]"}], ",", 
+            RowBox[{"ArcTan", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"Cos", "[", "\[Phi]", "]"}], " ", 
+               RowBox[{"Cos", "[", "\[Lambda]", "]"}]}], ",", 
+              RowBox[{"Sin", "[", "\[Phi]", "]"}]}], "]"}]}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"\[Phi]", ",", 
+            RowBox[{
+             RowBox[{"-", "\[Pi]"}], "/", "2"}], ",", 
+            RowBox[{"\[Pi]", "/", "2"}]}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"\[Lambda]", ",", 
+            RowBox[{
+             RowBox[{"-", "\[Pi]"}], "/", "gore"}], ",", 
+            RowBox[{"\[Pi]", "/", "gore"}]}], "}"}], ",", 
+          RowBox[{"PlotStyle", "\[Rule]", 
+           RowBox[{"Directive", "[", 
+            RowBox[{
+             RowBox[{"Texture", "[", 
+              RowBox[{"tex", "[", 
+               RowBox[{"[", "i", "]"}], "]"}], "]"}], ",", 
+             RowBox[{"Opacity", "[", "1", "]"}]}], "]"}]}], ",", 
+          RowBox[{"TextureCoordinateFunction", "\[Rule]", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"#1", ",", "#2"}], "}"}], "&"}], ")"}]}], ",", 
+          RowBox[{"Frame", "\[Rule]", "False"}], ",", 
+          RowBox[{"Axes", "\[Rule]", "False"}], ",", 
+          RowBox[{"BoundaryStyle", "\[Rule]", "None"}], ",", 
+          RowBox[{"PlotRangePadding", "\[Rule]", "0"}]}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", "1", ",", "gore"}], "}"}]}], "]"}], "]"}]}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->{{3.72627006272875*^9, 3.726270062729583*^9}, {
+   3.726324279825468*^9, 3.7263243371918716`*^9}, {3.7263243714795437`*^9, 
+   3.726324390923606*^9}, 
+   3.726917123905437*^9},ExpressionUUID->"af457686-564d-45f6-8926-\
+e054cb78424e"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"img", "=", 
+   RowBox[{"GeoImage", "[", 
+    RowBox[{"\"\<World\>\"", ",", " ", "\"\<ReliefMap\>\"", ",", 
+     RowBox[{"GeoProjection", "\[Rule]", "\"\<Equirectangular\>\""}], ",", 
+     RowBox[{"GeoRangePadding", "\[Rule]", "None"}], ",", " ", 
+     RowBox[{"ImageSize", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"2048", ",", "1024"}], "}"}]}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.726916289125127*^9, 
+  3.726916293948182*^9}},ExpressionUUID->"4e194dc7-231c-42d5-98fc-\
+9e9e0a4652e7"],
+
+Cell[BoxData[
+ RowBox[{"makeMap", "[", 
+  RowBox[{"img", ",", " ", "12"}], "]"}]], "Input",
+ CellChangeTimes->{{3.726324642976597*^9, 3.72632464822091*^9}, {
+   3.726916191045504*^9, 3.726916191220788*^9}, 
+   3.726917127016012*^9},ExpressionUUID->"47834018-f28a-414b-a068-\
+c1e268e95942"],
+
+Cell["\<\
+Another user, J.M., suggests this alternative which uses Mathematica\
+\[CloseCurlyQuote]s built-in InverseGudermannian[] function, significantly \
+speeding up the computation of the Mercator projection.\
+\>", "Text",
+ CellChangeTimes->{{3.726270065872946*^9, 3.7262701384353857`*^9}, {
+  3.72632574926438*^9, 
+  3.726325759444294*^9}},ExpressionUUID->"2d40f02b-9efd-4c92-921c-\
+b1f6c643dadf"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"GenerateMap", "[", 
+   RowBox[{"img_", ",", " ", "gore_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "tex", "}"}], ",", " ", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"tex", "=", 
+      RowBox[{"First", "@", 
+       RowBox[{"ImagePartition", "[", 
+        RowBox[{"img", ",", 
+         RowBox[{"Scaled", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"1", "/", "gore"}], ",", "1"}], "}"}], "]"}]}], "]"}]}]}],
+      ";", 
+     RowBox[{"Show", "[", 
+      RowBox[{
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"ParametricPlot", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"2", " ", 
+               RowBox[{"(", 
+                RowBox[{"i", "-", "1"}], ")"}], " ", 
+               RowBox[{"InverseGudermannian", "[", 
+                RowBox[{"\[Pi]", "/", "gore"}], "]"}]}], "+", 
+              RowBox[{"ArcTanh", "[", 
+               RowBox[{
+                RowBox[{"Cos", "[", "\[Phi]", "]"}], " ", 
+                RowBox[{"Sin", "[", "\[Lambda]", "]"}]}], "]"}]}], ",", 
+             RowBox[{"ArcTan", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"Cos", "[", "\[Phi]", "]"}], " ", 
+                RowBox[{"Cos", "[", "\[Lambda]", "]"}]}], ",", 
+               RowBox[{"Sin", "[", "\[Phi]", "]"}]}], "]"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"\[Phi]", ",", 
+             RowBox[{
+              RowBox[{"-", "\[Pi]"}], "/", "2"}], ",", 
+             RowBox[{"\[Pi]", "/", "2"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"\[Lambda]", ",", 
+             RowBox[{
+              RowBox[{"-", "\[Pi]"}], "/", "gore"}], ",", 
+             RowBox[{"\[Pi]", "/", "gore"}]}], "}"}], ",", 
+           RowBox[{"Axes", "\[Rule]", "False"}], ",", 
+           RowBox[{"BoundaryStyle", "\[Rule]", "None"}], ",", 
+           RowBox[{"Frame", "\[Rule]", "False"}], ",", 
+           RowBox[{"PlotStyle", "\[Rule]", 
+            RowBox[{"Directive", "[", 
+             RowBox[{
+              RowBox[{"Texture", "[", 
+               RowBox[{"tex", "[", 
+                RowBox[{"[", "i", "]"}], "]"}], "]"}], ",", 
+              RowBox[{"Opacity", "[", "1", "]"}]}], "]"}]}], ",", 
+           RowBox[{"TextureCoordinateFunction", "\[Rule]", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"#1", ",", "#2"}], "}"}], "&"}], ")"}]}]}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", "1", ",", "gore"}], "}"}]}], "]"}], ",", 
+       RowBox[{"PlotRange", "\[Rule]", "All"}], ",", " ", 
+       RowBox[{"ImageSize", "\[Rule]", 
+        RowBox[{"ImageDimensions", "[", "img", "]"}]}]}], "]"}]}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->{{3.726270105198637*^9, 3.7262701051996*^9}, {
+   3.726325694858665*^9, 3.7263257028375053`*^9}, 3.726916158566929*^9, {
+   3.726917114801013*^9, 
+   3.726917115792776*^9}},ExpressionUUID->"2a20dc05-9f21-4ab1-baaa-\
+692a630ec0d1"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"mapimg", "=", 
+   RowBox[{"makeMap", "[", 
+    RowBox[{"img", ",", " ", "12"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{
+  3.726325718308755*^9, {3.7263260251045094`*^9, 3.726326031662526*^9}, {
+   3.726326157487402*^9, 3.726326180193491*^9}, {3.726326229057851*^9, 
+   3.726326235777709*^9}, {3.726326591945923*^9, 3.726326592127261*^9}, {
+   3.726326938469905*^9, 3.726326946633379*^9}, 
+   3.726916332043784*^9},ExpressionUUID->"a4d871ea-7598-45c4-bc10-\
+6b872fb5b8fe"],
+
+Cell[BoxData[
+ RowBox[{"Export", "[", 
+  RowBox[{
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"NotebookDirectory", "[", "]"}], ",", "\"\<thing.png\>\""}], 
+     "}"}], "]"}], ",", " ", "mapimg"}], "]"}]], "Input",
+ CellChangeTimes->{{3.726326821772729*^9, 3.72632689469228*^9}, {
+  3.726916343283992*^9, 
+  3.726916391787524*^9}},ExpressionUUID->"1924b7fa-e20b-4142-93bb-\
+efbaab28200c"]
+}, Closed]]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
-Cell["Image Import", "Section",
- CellChangeTimes->{{3.680279776351989*^9, 3.680279778927932*^9}}],
+Cell["Map Generation Using GeoGraphics[]", "Section",
+ CellChangeTimes->{{3.680279873687272*^9, 3.6802798815983458`*^9}, {
+  3.726922164591557*^9, 
+  3.726922169263073*^9}},ExpressionUUID->"a0f73192-0776-4f01-9004-\
+9125234e8307"],
+
+Cell["\<\
+This section uses the slower Method 1. You can see that the workflow is much \
+more complicated than the other method.\
+\>", "Text",
+ CellChangeTimes->{{3.726916752048442*^9, 
+  3.7269168095453987`*^9}},ExpressionUUID->"f50abaca-a819-46e5-b9ae-\
+82eab4a49d74"],
 
 Cell[CellGroupData[{
 
-Cell["The image (as a mercator projection) to be printed.", "Subsection",
- CellChangeTimes->{{3.6802798236312933`*^9, 3.680279843486865*^9}}],
+Cell["Generate the globe.", "Subsection",
+ CellChangeTimes->{{3.680279907029146*^9, 3.680279919189496*^9}, 
+   3.680280014244082*^9, {3.6802811583701468`*^9, 
+   3.680281163049073*^9}},ExpressionUUID->"498e0fa0-6ed3-4902-8ee6-\
+8f15c2df0fd9"],
 
-Cell[TextData[{
- "There are many ways to insert an image into this notebook: ",
- ButtonBox["https://reference.wolfram.com/language/howto/\
-GetAnImageIntoTheWolframSystem.html",
-  BaseStyle->"Hyperlink",
-  ButtonData->{
-    URL["https://reference.wolfram.com/language/howto/\
-GetAnImageIntoTheWolframSystem.html"], None},
-  ButtonNote->
-   "https://reference.wolfram.com/language/howto/\
-GetAnImageIntoTheWolframSystem.html"],
- ". \nWe specify the location of the image to import below."
-}], "Text",
- CellChangeTimes->{{3.700414026110053*^9, 3.700414048429014*^9}, 
-   3.700414087037736*^9, {3.70041416130796*^9, 
-   3.7004141961725807`*^9}},ExpressionUUID->"32cb73b1-c8ee-4951-99f1-\
-ee4d64d53e01"],
+Cell[CellGroupData[{
+
+Cell["Some options.", "Subsubsection",
+ CellChangeTimes->{{3.680281186344707*^9, 
+  3.68028121176031*^9}},ExpressionUUID->"e0bfda2b-f627-4d1b-b5ef-\
+cf2eb583287e"],
+
+Cell["\<\
+The mapimage should have been set in the Image Import section. If not, set it \
+here.\
+\>", "Text",
+ CellChangeTimes->{{3.726916845001144*^9, 
+  3.72691687506502*^9}},ExpressionUUID->"3da6ab59-91be-461d-bff4-\
+5185d346682c"],
 
 Cell[BoxData[
  RowBox[{
@@ -194,33 +1153,9 @@ Cell[BoxData[
    RowBox[{
    "Import", "[", "\"\</path/to/image/SphericalPhoto.jpg\>\"", "]"}]}], 
   ";"}]], "Input",
- CellChangeTimes->{
-  3.680279888310463*^9, {3.680280499976821*^9, 3.680280501532168*^9}, {
-   3.680281311794519*^9, 3.68028131323069*^9}, 3.6802819950837708`*^9, {
-   3.680282327622115*^9, 3.6802823286060133`*^9}, 3.680282471659732*^9, {
-   3.680283328934478*^9, 3.6802833352691517`*^9}, {3.6813270364093*^9, 
-   3.681327044985016*^9}, 3.6813273167863703`*^9, {3.7004139377034397`*^9, 
-   3.700413945709668*^9}, 
-   3.700414199100526*^9},ExpressionUUID->"251b6cd5-e630-48a5-88ee-\
-e61c7312344e"]
-}, Open  ]]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["Map Generation", "Section",
- CellChangeTimes->{{3.680279873687272*^9, 3.6802798815983458`*^9}}],
-
-Cell[CellGroupData[{
-
-Cell["Generate the globe.", "Subsection",
- CellChangeTimes->{{3.680279907029146*^9, 3.680279919189496*^9}, 
-   3.680280014244082*^9, {3.6802811583701468`*^9, 3.680281163049073*^9}}],
-
-Cell[CellGroupData[{
-
-Cell["Some options.", "Subsubsection",
- CellChangeTimes->{{3.680281186344707*^9, 3.68028121176031*^9}}],
+ CellChangeTimes->{{3.726338785582095*^9, 
+  3.726338789057087*^9}},ExpressionUUID->"0fc6e5ee-3609-4e32-a271-\
+e964de673ad3"],
 
 Cell[BoxData[{
  RowBox[{
@@ -228,13 +1163,16 @@ Cell[BoxData[{
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
-   RowBox[{"filename", " ", "=", " ", "\"\<PaperGlobeModel\>\""}], ";", " ", 
-   RowBox[{"(*", " ", 
-    RowBox[{
-    "The", " ", "output", " ", "files", " ", "will", " ", "be", " ", "named", 
-     " ", 
-     RowBox[{"filename", ".", "jpg"}], " ", "and", " ", 
-     RowBox[{"filenamePatch", ".", "jpg"}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"filename", " ", "=", " ", "\"\<PaperGlobeModel\>\""}], ";"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "The", " ", "output", " ", "files", " ", "will", " ", "be", " ", "named", 
+    " ", 
+    RowBox[{"filename", ".", "jpg"}], " ", "and", " ", 
+    RowBox[{"filenamePatch", ".", "jpg"}]}], "*)"}]}], "\[IndentingNewLine]", 
+
+ RowBox[{
+  RowBox[{
    RowBox[{"\[CapitalDelta]", " ", "=", " ", "30"}], ";"}], " ", 
   RowBox[{"(*", " ", 
    RowBox[{"Degrees", " ", "per", " ", 
@@ -244,8 +1182,11 @@ Cell[BoxData[{
      FractionBox["\[CapitalDelta]", "360"], "."}]}], " ", 
    "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"SetDirectory", "[", "\"\</path/to/output/directory\>\"", "]"}], 
-  ";", " ", 
+  RowBox[{
+   RowBox[{
+   "SetDirectory", "[", 
+    "\"\</Users/rljacobson/Google Drive/Professional/Classes/Math 381 Complex \
+Analysis/Notebooks and Labs\>\"", "]"}], ";"}], " ", 
   RowBox[{"(*", " ", 
    RowBox[{"Output", " ", "files", " ", "are", " ", "stored", " ", 
     RowBox[{"here", "."}]}], " ", "*)"}]}]}], "Input",
@@ -258,8 +1199,8 @@ Cell[BoxData[{
    3.680282318310112*^9}, 3.680282459660972*^9, {3.6802832096637983`*^9, 
    3.680283210543091*^9}, {3.681327186733774*^9, 3.6813271893097057`*^9}, {
    3.681327357833829*^9, 3.681327396448904*^9}, {3.681331015133585*^9, 
-   3.6813310611164217`*^9}, {3.700414210941642*^9, 
-   3.700414249756274*^9}},ExpressionUUID->"eb9e5eea-2e20-43b5-8975-\
+   3.6813310611164217`*^9}, {3.700414210941642*^9, 3.700414249756274*^9}, 
+   3.726265114294245*^9},ExpressionUUID->"eb9e5eea-2e20-43b5-8975-\
 4d5096331ec8"]
 }, Open  ]],
 
@@ -267,6 +1208,8 @@ Cell[CellGroupData[{
 
 Cell["Generate the images.", "Subsubsection",
  CellChangeTimes->{{3.6802812169935417`*^9, 3.6802812282976007`*^9}}],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -319,7 +1262,20 @@ Cell[BoxData[
    3.6800224896765413`*^9}, 3.680022539869416*^9, {3.680022769064423*^9, 
    3.680022770728017*^9}, 3.6802800255106363`*^9, {3.68028031493649*^9, 
    3.6802803177202883`*^9}, 3.680280375184877*^9, {3.680280948645224*^9, 
-   3.680280952356928*^9}, {3.6802810858277197`*^9, 3.680281107795185*^9}}]
+   3.680280952356928*^9}, {3.6802810858277197`*^9, 3.680281107795185*^9}, {
+   3.726266299639024*^9, 
+   3.726266303669949*^9}},ExpressionUUID->"d86bc075-5953-43de-aef1-\
+0f1ea4bd1cb8"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"PaperGlobeModel.jpg\"\>", 
+   ",", "\<\"PaperGlobeModelPatch.jpg\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.726265187723194*^9, 3.726265250678831*^9, 
+  3.726265505305202*^9, 3.7262658627320623`*^9, 3.726266369894217*^9, 
+  3.726267874462002*^9},ExpressionUUID->"46075239-556f-4657-8c07-\
+689e0c8d3dc5"]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -419,7 +1375,7 @@ Cell[BoxData[{
            "}"}]}], ",", 
          RowBox[{"GeoProjection", "\[Rule]", 
           RowBox[{"{", 
-           RowBox[{"\"\<TransverseMercator\>\"", ",", 
+           RowBox[{"goreProjection", ",", 
             RowBox[{"\"\<Centering\>\"", "\[Rule]", 
              RowBox[{"{", 
               RowBox[{"0", ",", 
@@ -445,8 +1401,8 @@ Cell[BoxData[{
    3.6800179200193987`*^9, 3.680017924338869*^9}, {3.6800180021527033`*^9, 
    3.680018002472535*^9}, 3.6813271016562557`*^9, {3.681327132247677*^9, 
    3.681327135520351*^9}, {3.700414289892568*^9, 3.700414320924369*^9}, {
-   3.700414476203697*^9, 
-   3.7004145122208757`*^9}},ExpressionUUID->"ce01aeb2-106e-4ca1-9f6f-\
+   3.700414476203697*^9, 3.7004145122208757`*^9}, 
+   3.726266217428083*^9},ExpressionUUID->"ce01aeb2-106e-4ca1-9f6f-\
 67535976d971"],
 
 Cell[BoxData[
@@ -464,67 +1420,14 @@ Cell[BoxData[
    3.700414323164751*^9}},ExpressionUUID->"11354e0a-100f-4cc2-8849-\
 4d6158e01129"]
 }, Open  ]]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["A 3D preview of the resulting globe", "Section",
- CellChangeTimes->{{3.68028015826628*^9, 3.680280176201305*^9}}],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"mapimage", " ", "=", " ", 
-   RowBox[{"Import", "[", "\"\</path/to/spherical/image.jpg\>\"", "]"}]}], 
-  ";"}]], "Input",
- CellChangeTimes->{{3.6980807829371347`*^9, 3.6980808128381557`*^9}, {
-  3.7004143489328136`*^9, 
-  3.7004143586436777`*^9}},ExpressionUUID->"6cc40f27-d22a-439f-a862-\
-fbacd9fd5d0e"],
-
-Cell[BoxData[
- RowBox[{"SphericalPlot3D", "[", 
-  RowBox[{"1", ",", 
-   RowBox[{"{", 
-    RowBox[{"u", ",", "0", ",", "Pi"}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"v", ",", "0", ",", 
-     RowBox[{"2", " ", "Pi"}]}], "}"}], ",", 
-   RowBox[{"PlotPoints", "\[Rule]", "20"}], ",", 
-   RowBox[{"MaxRecursion", "\[Rule]", "0"}], ",", 
-   RowBox[{"Mesh", "\[Rule]", "None"}], ",", 
-   RowBox[{"Axes", "\[Rule]", "False"}], ",", 
-   RowBox[{"Boxed", "\[Rule]", "False"}], ",", " ", 
-   RowBox[{"TextureCoordinateFunction", "\[Rule]", 
-    RowBox[{"(", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{"#5", ",", 
-        RowBox[{"1", "-", "#4"}]}], "}"}], "&"}], ")"}]}], ",", 
-   RowBox[{"PlotStyle", "\[Rule]", 
-    RowBox[{"Directive", "[", 
-     RowBox[{
-      RowBox[{"Texture", "[", "mapimage", "]"}], ",", 
-      RowBox[{"Specularity", "[", 
-       RowBox[{"White", ",", "50"}], "]"}]}], "]"}]}], ",", 
-   RowBox[{"Lighting", "\[Rule]", 
-    RowBox[{"{", 
-     RowBox[{"{", 
-      RowBox[{"\"\<Ambient\>\"", ",", " ", "White"}], "}"}], "}"}]}]}], 
-  "]"}]], "Input",
- CellChangeTimes->{{3.679949324130884*^9, 3.679949337400263*^9}, {
-  3.6799494067086487`*^9, 3.679949447603108*^9}, {3.6799494891557617`*^9, 
-  3.679949504243301*^9}, {3.69808087661653*^9, 3.698080958766767*^9}, {
-  3.698081011638237*^9, 3.698081049069886*^9}, {3.698081117062586*^9, 
-  3.698081135340906*^9}, {3.6980812888414793`*^9, 3.6980812908048563`*^9}, {
-  3.6980813227696323`*^9, 3.6980813240164413`*^9}, {3.698081398081959*^9, 
-  3.698081405985577*^9}, {3.6980814901854467`*^9, 3.6980814921438627`*^9}}]
+}, Closed]]
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{1234, 1292},
-WindowMargins->{{240, Automatic}, {Automatic, 0}},
-FrontEndVersion->"11.1 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 16, \
-2017)",
+WindowSize->{1081, 1274},
+WindowMargins->{{633, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2018)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
@@ -538,76 +1441,142 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
+Cell[558, 20, 3158, 77, 28, "Input",ExpressionUUID->"0db1fe00-0bcc-4d25-bfb9-cf0e3e043812",
+ CellOpen->False,
+ InitializationCell->True],
 Cell[CellGroupData[{
-Cell[580, 22, 122, 1, 137, "Title", "ExpressionUUID" -> \
-"e53f6125-1f38-4f45-b1d4-372c9557bbaa"],
-Cell[705, 25, 2108, 34, 549, "Text", "ExpressionUUID" -> \
-"d53fdf5f-0f5d-4b49-9d92-e77ee9f12506"],
-Cell[2816, 61, 633, 13, 77, "Text", "ExpressionUUID" -> \
-"cbee2383-d5da-41f4-a7c0-c544b9faeb8d"],
+Cell[3741, 101, 182, 3, 238, "Title",ExpressionUUID->"e53f6125-1f38-4f45-b1d4-372c9557bbaa"],
+Cell[3926, 106, 343, 6, 88, "Text",ExpressionUUID->"5dd62b4f-83c3-4229-b27a-aad53edd03d3"],
 Cell[CellGroupData[{
-Cell[3474, 78, 104, 1, 96, "Section", "ExpressionUUID" -> \
-"9c00d26f-b4e7-4a72-9969-282e695e3a4c"],
-Cell[3581, 81, 3058, 78, 495, "Input", "ExpressionUUID" -> \
-"ba3ccf17-4857-4a15-9c73-cea09cdce7a5"]
-}, Open  ]],
+Cell[4294, 116, 157, 3, 103, "Chapter",ExpressionUUID->"bceaca3b-d32d-4aee-bf26-e70bb65f50a1"],
 Cell[CellGroupData[{
-Cell[6676, 164, 97, 1, 96, "Section", "ExpressionUUID" -> \
-"8234a800-54c2-4086-a0df-7c4ccf318655"],
+Cell[4476, 123, 152, 3, 101, "Section",ExpressionUUID->"17f80bdf-373f-4d2e-bced-558093fa950a"],
 Cell[CellGroupData[{
-Cell[6798, 169, 141, 1, 65, "Subsection", "ExpressionUUID" -> \
-"4b6b2494-d758-4579-bccf-09a648b34205"],
-Cell[6942, 172, 698, 16, 106, "Text", "ExpressionUUID" -> \
-"32cb73b1-c8ee-4951-99f1-ee4d64d53e01"],
-Cell[7643, 190, 662, 14, 49, "Input", "ExpressionUUID" -> \
-"251b6cd5-e630-48a5-88ee-e61c7312344e"]
+Cell[4653, 130, 271, 7, 49, "Item",ExpressionUUID->"619cd6da-ce09-451b-adee-bd5d88c83fcb"],
+Cell[4927, 139, 343, 8, 49, "Item",ExpressionUUID->"df641eeb-3a38-4ba6-b6d4-0d838e89650f"],
+Cell[5273, 149, 539, 11, 143, "Item",ExpressionUUID->"5b80a6f8-bbf6-4f65-b418-33a103d7101a"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8354, 210, 101, 1, 96, "Section", "ExpressionUUID" -> \
-"a0f73192-0776-4f01-9004-9125234e8307"],
-Cell[CellGroupData[{
-Cell[8480, 215, 181, 2, 65, "Subsection", "ExpressionUUID" -> \
-"498e0fa0-6ed3-4902-8ee6-8f15c2df0fd9"],
-Cell[CellGroupData[{
-Cell[8686, 221, 103, 1, 52, "Subsubsection", "ExpressionUUID" -> \
-"e0bfda2b-f627-4d1b-b5ef-cf2eb583287e"],
-Cell[8792, 224, 1859, 38, 214, "Input", "ExpressionUUID" -> \
-"eb9e5eea-2e20-43b5-8975-4d5096331ec8"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[10688, 267, 115, 1, 52, "Subsubsection", "ExpressionUUID" -> \
-"0b0e6c0d-5380-4100-9f12-ac9028d224b9"],
-Cell[10806, 270, 2048, 51, 236, "Input", "ExpressionUUID" -> \
-"d86bc075-5953-43de-aef1-0f1ea4bd1cb8"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[12891, 326, 226, 5, 52, "Subsubsection", "ExpressionUUID" -> \
-"0d3bee5b-17c2-4cbe-99c2-a5c4254ca38d"],
-Cell[13120, 333, 869, 23, 81, "Input", "ExpressionUUID" -> \
-"5aac3ee9-d578-45df-bbb1-5f2a285df125"],
-Cell[13992, 358, 638, 15, 81, "Input", "ExpressionUUID" -> \
-"0212f6ec-477f-4a75-a317-931c96108412"]
+Cell[5861, 166, 266, 3, 101, "Section",ExpressionUUID->"80071e20-f84b-48cf-97c9-22e306aae1be"],
+Cell[6130, 171, 2312, 38, 709, "Text",ExpressionUUID->"d53fdf5f-0f5d-4b49-9d92-e77ee9f12506"],
+Cell[8445, 211, 694, 15, 88, "Text",ExpressionUUID->"cbee2383-d5da-41f4-a7c0-c544b9faeb8d"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[14679, 379, 230, 4, 65, "Subsection", "ExpressionUUID" -> \
-"a319ea06-9a9a-4ab5-a2b5-3b913e9f852c"],
-Cell[14912, 385, 241, 5, 47, "Text", "ExpressionUUID" -> \
-"25dfe7cb-73fa-4162-91c9-759f6ee50d8f"],
-Cell[15156, 392, 2406, 57, 205, "Input", "ExpressionUUID" -> \
-"ce01aeb2-106e-4ca1-9f6f-67535976d971"],
-Cell[17565, 451, 731, 13, 49, "Input", "ExpressionUUID" -> \
-"11354e0a-100f-4cc2-8849-4d6158e01129"]
+Cell[9188, 232, 160, 3, 103, "Chapter",ExpressionUUID->"e3988dbc-5187-49c4-96a1-5181a8c79ab8"],
+Cell[9351, 237, 172, 3, 53, "Text",ExpressionUUID->"67a85801-5762-4888-9ada-5b7d627482b6"],
+Cell[CellGroupData[{
+Cell[9548, 244, 212, 4, 48, "ItemNumbered",ExpressionUUID->"699023b0-dd57-4d7a-ac1e-413397ab1474"],
+Cell[9763, 250, 206, 3, 48, "ItemNumbered",ExpressionUUID->"ed180325-f037-48db-9ad1-125998caf74e"],
+Cell[9972, 255, 186, 3, 48, "ItemNumbered",ExpressionUUID->"5e337ffd-18f2-4edb-b2de-29c9d333ea53"],
+Cell[10161, 260, 329, 7, 80, "ItemNumbered",ExpressionUUID->"befcf9d1-c0bd-4e1f-8740-6c4d48544699"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10527, 272, 211, 4, 101, "Section",ExpressionUUID->"989d5e31-e366-4a39-b0f8-fa978fb1745d"],
+Cell[10741, 278, 271, 6, 88, "Text",ExpressionUUID->"36b21c82-089d-41ae-a6b7-dbd6a9094969"],
+Cell[11015, 286, 698, 16, 122, "Text",ExpressionUUID->"0e267fb4-3b84-47ca-a4cc-53ea3562d3df"],
+Cell[11716, 304, 874, 18, 78, "Input",ExpressionUUID->"967b7e13-1c06-4284-b23f-a47acde51847"],
+Cell[12593, 324, 232, 4, 53, "Text",ExpressionUUID->"85405499-25ea-4c32-8c4f-b606f99f85e9"],
+Cell[12828, 330, 943, 18, 78, "Input",ExpressionUUID->"af2c5f82-fa1b-424a-866c-7a92079977d5"],
+Cell[13774, 350, 211, 5, 53, "Text",ExpressionUUID->"7713aa40-97fb-4413-98a7-e7af241ac944"],
+Cell[13988, 357, 762, 16, 109, "Input",ExpressionUUID->"6ff82188-d3c5-43ef-8e28-e7c779345b7a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14787, 378, 166, 3, 101, "Section",ExpressionUUID->"959e42a3-9c88-49de-9b6e-d5273d2391e5"],
+Cell[14956, 383, 471, 8, 122, "Text",ExpressionUUID->"a9e9389e-2408-40a7-a2ed-0ab7f4b5feef"],
+Cell[15430, 393, 227, 5, 53, "Text",ExpressionUUID->"564a0a33-63fb-49b6-9547-a143fc376156"],
+Cell[15660, 400, 405, 8, 46, "Input",ExpressionUUID->"0b4cb40a-9f44-4cd5-a92c-749e11d2a925"],
+Cell[16068, 410, 295, 7, 53, "Text",ExpressionUUID->"4fee71fa-b1ad-4152-9f14-a24dbcfa0061"],
+Cell[16366, 419, 689, 14, 78, "Input",ExpressionUUID->"67a0746f-e69b-4d9d-b5e8-07b15b4094cc"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17092, 438, 172, 3, 101, "Section",ExpressionUUID->"77b1d7b5-3822-4284-bcc0-c6730805a319"],
+Cell[17267, 443, 434, 8, 122, "Text",ExpressionUUID->"39223299-1590-473a-8d43-f06b69a555e3"],
+Cell[17704, 453, 160, 3, 46, "Input",ExpressionUUID->"5d03717f-0b17-4f01-bd4c-57c6fd67ae6c"],
+Cell[17867, 458, 284, 6, 88, "Text",ExpressionUUID->"ee6c3dd2-5567-422c-a081-cb61800bca47"],
+Cell[18154, 466, 308, 7, 46, "Input",ExpressionUUID->"85f911ce-05ba-4c3d-a330-02b5d5a506f4"],
+Cell[18465, 475, 526, 10, 122, "Text",ExpressionUUID->"ee94196c-551b-47d1-a765-8ed19bd6c6d0"],
+Cell[18994, 487, 430, 11, 46, "Input",ExpressionUUID->"183fdbb4-72d8-4332-9e57-6773119c009d"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[18345, 470, 119, 1, 96, "Section", "ExpressionUUID" -> \
-"29f513c7-48b9-41db-98d6-5a58d01dc243"],
-Cell[18467, 473, 339, 8, 49, "Input", "ExpressionUUID" -> \
-"6cc40f27-d22a-439f-a862-fbacd9fd5d0e"],
-Cell[18809, 483, 1586, 36, 143, "Input", "ExpressionUUID" -> \
-"96591c53-d586-4158-a675-df6743e4586d"]
+Cell[19473, 504, 217, 4, 103, "Chapter",ExpressionUUID->"29f513c7-48b9-41db-98d6-5a58d01dc243"],
+Cell[19693, 510, 211, 4, 53, "Text",ExpressionUUID->"e901f5b4-8ebd-41bb-ae2f-6cfbd499ccb7"],
+Cell[19907, 516, 339, 8, 46, "Input",ExpressionUUID->"6cc40f27-d22a-439f-a862-fbacd9fd5d0e"],
+Cell[20249, 526, 211, 5, 53, "Text",ExpressionUUID->"e306d5bf-5235-4f49-9ab6-c00b270610ee"],
+Cell[20463, 533, 627, 14, 109, "Input",ExpressionUUID->"3cd71b5a-8f83-411d-be73-15fa5ae9ca79"],
+Cell[21093, 549, 168, 3, 53, "Text",ExpressionUUID->"9316b080-80bf-45af-acc0-436e5ad2038f"],
+Cell[21264, 554, 1646, 38, 171, "Input",ExpressionUUID->"96591c53-d586-4158-a675-df6743e4586d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22947, 597, 287, 5, 103, "Chapter",ExpressionUUID->"fc5bb304-5e38-4b9d-97fe-729194027c14"],
+Cell[23237, 604, 417, 10, 88, "Text",ExpressionUUID->"6a787272-ad3b-4584-b6fd-1d67b559a2cd"],
+Cell[CellGroupData[{
+Cell[23679, 618, 217, 4, 101, "Section",ExpressionUUID->"9c00d26f-b4e7-4a72-9969-282e695e3a4c"],
+Cell[CellGroupData[{
+Cell[23921, 626, 202, 3, 81, "Subsection",ExpressionUUID->"b1919c74-2363-4521-a612-7ab3d7d703b2"],
+Cell[24126, 631, 368, 8, 88, "Text",ExpressionUUID->"66e37cfa-d44a-44c5-9187-741b66c64037"],
+Cell[CellGroupData[{
+Cell[24519, 643, 193, 3, 67, "Subsubsection",ExpressionUUID->"fd9070c0-e3d2-4054-b548-7bfd1fe82e27"],
+Cell[24715, 648, 1253, 19, 329, "Text",ExpressionUUID->"c62a168a-4e87-42bb-8205-9b855cdde749"],
+Cell[25971, 669, 427, 11, 78, "Input",ExpressionUUID->"f4416cf4-50b4-4853-a766-f4d05c6c41c3"],
+Cell[26401, 682, 225, 5, 46, "Input",ExpressionUUID->"a530d295-b61d-4ecb-a413-9f4b1a1573ba"],
+Cell[26629, 689, 371, 10, 46, "Input",ExpressionUUID->"5ee3c512-b9e0-490e-a01c-decfe1899e00"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27037, 704, 201, 3, 67, "Subsubsection",ExpressionUUID->"5635cf1f-a148-4f7f-a73e-28d036500503"],
+Cell[27241, 709, 1487, 29, 233, "Text",ExpressionUUID->"0f23dc7b-9fa8-408b-abb8-233d3ed72502"],
+Cell[28731, 740, 1985, 46, 272, "Input",ExpressionUUID->"ba3ccf17-4857-4a15-9c73-cea09cdce7a5"],
+Cell[30719, 788, 378, 7, 88, "Text",ExpressionUUID->"4aae34bf-c790-4df3-b7d8-536fe2903e46"],
+Cell[31100, 797, 2359, 55, 295, "Input",ExpressionUUID->"3070b3b7-d25e-469b-811f-8c052ada0ed0"],
+Cell[33462, 854, 556, 9, 122, "Text",ExpressionUUID->"d568c475-dda6-4fac-8f4d-51b89dd725d4"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[34067, 869, 321, 6, 55, "Subsection",ExpressionUUID->"8d7dc36c-3c26-4166-be79-bdcd5605b0bf"],
+Cell[34391, 877, 655, 11, 191, "Text",ExpressionUUID->"e0f34197-17d7-432e-a8c1-5a33d32735dd"],
+Cell[35049, 890, 593, 11, 122, "Text",ExpressionUUID->"ab8ce8c1-6e2c-4bcc-860f-17639b7786b4"],
+Cell[35645, 903, 2709, 67, 295, "Input",ExpressionUUID->"af457686-564d-45f6-8926-e054cb78424e"],
+Cell[38357, 972, 540, 12, 78, "Input",ExpressionUUID->"4e194dc7-231c-42d5-98fc-9e9e0a4652e7"],
+Cell[38900, 986, 289, 6, 46, "Input",ExpressionUUID->"47834018-f28a-414b-a068-c1e268e95942"],
+Cell[39192, 994, 402, 8, 122, "Text",ExpressionUUID->"2d40f02b-9efd-4c92-921c-b1f6c643dadf"],
+Cell[39597, 1004, 3096, 76, 357, "Input",ExpressionUUID->"2a20dc05-9f21-4ab1-baaa-692a630ec0d1"],
+Cell[42696, 1082, 512, 11, 46, "Input",ExpressionUUID->"a4d871ea-7598-45c4-bc10-6b872fb5b8fe"],
+Cell[43211, 1095, 422, 11, 46, "Input",ExpressionUUID->"1924b7fa-e20b-4142-93bb-efbaab28200c"]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[43682, 1112, 230, 4, 101, "Section",ExpressionUUID->"a0f73192-0776-4f01-9004-9125234e8307"],
+Cell[43915, 1118, 270, 6, 88, "Text",ExpressionUUID->"f50abaca-a819-46e5-b9ae-82eab4a49d74"],
+Cell[CellGroupData[{
+Cell[44210, 1128, 242, 4, 81, "Subsection",ExpressionUUID->"498e0fa0-6ed3-4902-8ee6-8f15c2df0fd9"],
+Cell[CellGroupData[{
+Cell[44477, 1136, 163, 3, 67, "Subsubsection",ExpressionUUID->"e0bfda2b-f627-4d1b-b5ef-cf2eb583287e"],
+Cell[44643, 1141, 234, 6, 53, "Text",ExpressionUUID->"3da6ab59-91be-461d-bff4-5185d346682c"],
+Cell[44880, 1149, 291, 8, 46, "Input",ExpressionUUID->"0fc6e5ee-3609-4e32-a271-e964de673ad3"],
+Cell[45174, 1159, 1994, 44, 273, "Input",ExpressionUUID->"eb9e5eea-2e20-43b5-8975-4d5096331ec8"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[47205, 1208, 115, 1, 67, "Subsubsection",ExpressionUUID->"0b0e6c0d-5380-4100-9f12-ac9028d224b9"],
+Cell[CellGroupData[{
+Cell[47345, 1213, 2159, 54, 264, "Input",ExpressionUUID->"d86bc075-5953-43de-aef1-0f1ea4bd1cb8"],
+Cell[49507, 1269, 351, 7, 52, "Output",ExpressionUUID->"46075239-556f-4657-8c07-689e0c8d3dc5"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[49907, 1282, 226, 5, 67, "Subsubsection",ExpressionUUID->"0d3bee5b-17c2-4cbe-99c2-a5c4254ca38d"],
+Cell[50136, 1289, 869, 23, 109, "Input",ExpressionUUID->"5aac3ee9-d578-45df-bbb1-5f2a285df125"],
+Cell[51008, 1314, 638, 15, 78, "Input",ExpressionUUID->"0212f6ec-477f-4a75-a317-931c96108412"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[51695, 1335, 230, 4, 122, "Subsection",ExpressionUUID->"a319ea06-9a9a-4ab5-a2b5-3b913e9f852c"],
+Cell[51928, 1341, 241, 5, 53, "Text",ExpressionUUID->"25dfe7cb-73fa-4162-91c9-759f6ee50d8f"],
+Cell[52172, 1348, 2416, 57, 233, "Input",ExpressionUUID->"ce01aeb2-106e-4ca1-9f6f-67535976d971"],
+Cell[54591, 1407, 731, 13, 46, "Input",ExpressionUUID->"11354e0a-100f-4cc2-8849-4d6158e01129"]
+}, Open  ]]
+}, Closed]]
 }, Open  ]]
 }, Open  ]]
 }

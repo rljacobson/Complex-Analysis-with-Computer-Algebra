@@ -7,7 +7,7 @@ Best regards,
 Robert Jacobson<br>
 rjacobson@rwu.edu
 
-## `Complex Analysis wtih Mathematica.nb`
+## `Complex Analysis with Mathematica.nb`
 Think of this notebook as an extended cheat sheet. It gives a brief tour of Mathematica's built-in tools for working with complex numbers and functions. It also presents several different ways of using Mathematica to plot on the complex plane: curves, functions, regions of the plane, etc.
 
 ## `Iterative Maps.nb`
